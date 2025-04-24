@@ -74,7 +74,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
-        
+        //Inicia tela cliente
          TelaCliente tc = new TelaCliente();
         dskPainel.add(tc);
         tc.setVisible(true);
