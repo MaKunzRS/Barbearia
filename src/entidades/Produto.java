@@ -1,0 +1,79 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package entidades;
+
+/**
+ *
+ * @author matheus.kunz
+ */
+public class Produto {
+
+    private int id;
+    private String descricao;
+    private double preco;
+    private int tempoEstimado;
+    private String tipo;
+    private int estoque;
+
+    public Produto() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getTempoEstimado() {
+        return tempoEstimado;
+    }
+
+    public void setTempoEstimado(int tempoEstimado) {
+        this.tempoEstimado = tempoEstimado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+    public void exibeAtributos() {
+        System.out.println(id);
+        System.out.println(descricao);
+        System.out.println(preco);
+        System.out.println(tempoEstimado);
+        System.out.println(tipo);
+        System.out.println(estoque);
+    }
+}
