@@ -26,21 +26,129 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        containerAbasProduto = new javax.swing.JTabbedPane();
+        abaCadastro = new javax.swing.JPanel();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        lblDescricao = new javax.swing.JLabel();
+        txtDescricao = new javax.swing.JTextField();
+        lblPreco = new javax.swing.JLabel();
+        txtPreco = new javax.swing.JTextField();
+        lblTempoEstimado = new javax.swing.JLabel();
+        txtTempoEstimado = new javax.swing.JTextField();
+        lblTipo = new javax.swing.JLabel();
+        txtTipo = new javax.swing.JTextField();
+        lblEstoque = new javax.swing.JLabel();
+        txtEstoque = new javax.swing.JTextField();
+
+        setClosable(true);
+
+        lblId.setText("Id");
+
+        lblDescricao.setText("Descrição");
+
+        lblPreco.setText("Preço");
+
+        lblTempoEstimado.setText("Tempo Estimado");
+
+        lblTipo.setText("Tipo");
+
+        txtTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoActionPerformed(evt);
+            }
+        });
+
+        lblEstoque.setText("Estoque");
+
+        javax.swing.GroupLayout abaCadastroLayout = new javax.swing.GroupLayout(abaCadastro);
+        abaCadastro.setLayout(abaCadastroLayout);
+        abaCadastroLayout.setHorizontalGroup(
+            abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblId)
+                    .addComponent(txtId)
+                    .addComponent(lblDescricao)
+                    .addComponent(txtDescricao)
+                    .addComponent(lblPreco)
+                    .addComponent(txtPreco)
+                    .addComponent(lblTempoEstimado)
+                    .addComponent(txtTempoEstimado)
+                    .addComponent(lblTipo)
+                    .addComponent(txtTipo)
+                    .addComponent(lblEstoque)
+                    .addComponent(txtEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+        abaCadastroLayout.setVerticalGroup(
+            abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblId)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDescricao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPreco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTempoEstimado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTempoEstimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTipo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEstoque)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        containerAbasProduto.addTab("Cadastro", abaCadastro);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addComponent(containerAbasProduto)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(containerAbasProduto)
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel abaCadastro;
+    private javax.swing.JTabbedPane containerAbasProduto;
+    private javax.swing.JLabel lblDescricao;
+    private javax.swing.JLabel lblEstoque;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblPreco;
+    private javax.swing.JLabel lblTempoEstimado;
+    private javax.swing.JLabel lblTipo;
+    private javax.swing.JTextField txtDescricao;
+    private javax.swing.JTextField txtEstoque;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtPreco;
+    private javax.swing.JTextField txtTempoEstimado;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

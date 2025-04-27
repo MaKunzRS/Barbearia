@@ -12,7 +12,7 @@ public class Produto {
 
     private int id;
     private String descricao;
-    private double preco;
+    private String preco;
     private int tempoEstimado;
     private String tipo;
     private int estoque;
@@ -36,11 +36,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
