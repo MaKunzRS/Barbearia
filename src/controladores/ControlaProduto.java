@@ -19,4 +19,9 @@ public class ControlaProduto {
         vtrProduto.add(p);
     }
     
+    public ArrayList<Produto> RecuperarTodos(){
+        
+        return vtrProduto;
+    }
+    
 }

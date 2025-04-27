@@ -22,7 +22,6 @@ public class ControlaCliente {
 
     public ArrayList<Cliente> recuperarTodos(){
 
-        
         return vtrClientes;
 
     }

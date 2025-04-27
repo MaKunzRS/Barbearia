@@ -18,4 +18,9 @@ public class ControlaFuncionario {
     public void salvar(Funcionario f){
         vtrFuncionario.add(f);
     }
+    
+    public ArrayList<Funcionario> RecuperarTodos(){
+         
+        return vtrFuncionario;
+    }
 }
