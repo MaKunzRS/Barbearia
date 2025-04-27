@@ -19,7 +19,7 @@ public class ControlaFuncionario {
         vtrFuncionario.add(f);
     }
     
-    public ArrayList<Funcionario> RecuperarTodos(){
+    public ArrayList<Funcionario> recuperarTodos(){
          
         return vtrFuncionario;
     }
