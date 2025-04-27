@@ -107,6 +107,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFuncionarios = new javax.swing.JTable();
+        btnAtualizar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -199,6 +200,13 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblFuncionarios);
 
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -206,12 +214,18 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 111, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAtualizar)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(btnAtualizar)
+                .addContainerGap())
         );
 
         abaListagem.addTab("Listagem", jPanel1);
@@ -265,10 +279,17 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         montaTabela();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    //Botão atualizar
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        
+        montaTabela();
+    }//GEN-LAST:event_btnAtualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
     private javax.swing.JTabbedPane abaListagem;
+    private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
