@@ -57,6 +57,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnCadastros.add(mnClientes);
 
         mnFuncionarios.setText("Funcionários");
+        mnFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnFuncionariosActionPerformed(evt);
+            }
+        });
         mnCadastros.add(mnFuncionarios);
 
         mnBarra.add(mnCadastros);
@@ -77,12 +82,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
         //Inicia tela cliente
-         TelaCliente tc = new TelaCliente();
+    private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
+        TelaCliente tc = new TelaCliente();
         dskPainel.add(tc);
         tc.setVisible(true);
     }//GEN-LAST:event_mnClientesActionPerformed
+        //Inicia tela funcionario
+    private void mnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFuncionariosActionPerformed
+        TelaFuncionario tf = new TelaFuncionario();
+        dskPainel.add(tf);
+        tf.setVisible(true);
+    }//GEN-LAST:event_mnFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
