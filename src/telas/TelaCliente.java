@@ -95,7 +95,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        containerAbas = new javax.swing.JTabbedPane();
+        containerAbasCliente = new javax.swing.JTabbedPane();
         abaCadastro = new javax.swing.JPanel();
         txtId = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
@@ -114,6 +114,8 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
         btnAtualiza = new javax.swing.JButton();
+
+        setClosable(true);
 
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,9 +158,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                         .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                         .addComponent(txtDataNasc)
                         .addComponent(txtEmail)
-                        .addComponent(txtId)
                         .addComponent(lblCpf)
-                        .addComponent(txtCpf))
+                        .addComponent(txtCpf)
+                        .addComponent(txtId))
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(320, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
@@ -198,7 +200,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        containerAbas.addTab("Cadastro", abaCadastro);
+        containerAbasCliente.addTab("Cadastro", abaCadastro);
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -241,17 +243,17 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        containerAbas.addTab("Listagem", abaListagem);
+        containerAbasCliente.addTab("Listagem", abaListagem);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(containerAbas, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addComponent(containerAbasCliente)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(containerAbas)
+            .addComponent(containerAbasCliente)
         );
 
         pack();
@@ -261,6 +263,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
 
+    //Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Cliente cl = new Cliente();
 
@@ -303,7 +306,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel abaListagem;
     private javax.swing.JButton btnAtualiza;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JTabbedPane containerAbas;
+    private javax.swing.JTabbedPane containerAbasCliente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblDataNasc;

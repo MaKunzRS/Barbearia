@@ -14,7 +14,7 @@ public class Funcionario {
     private String nome;
     private String cargo;
     private String telefone;
-    private double salario;
+    private String salario;
 
     public Funcionario() {
     }
@@ -51,11 +51,11 @@ public class Funcionario {
         this.telefone = telefone;
     }
 
-    public double getSalario() {
+    public String getSalario() {
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(String salario) {
         this.salario = salario;
     }
 

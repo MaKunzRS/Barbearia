@@ -4,15 +4,19 @@
  */
 package telas;
 
+import controladores.ControlaFuncionario;
+import entidades.Cliente;
+import entidades.Funcionario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Matheus
  */
 public class TelaFuncionario extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaFuncionario
-     */
+   ControlaFuncionario cf = new ControlaFuncionario();
+   
     public TelaFuncionario() {
         initComponents();
     }
@@ -26,21 +30,161 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        containerAbasFuncionario = new javax.swing.JTabbedPane();
+        abaCadastro = new javax.swing.JPanel();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        lblNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lblCargo = new javax.swing.JLabel();
+        txtCargo = new javax.swing.JTextField();
+        lblTelefone = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JTextField();
+        lblSalario = new javax.swing.JLabel();
+        txtSalario = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
+
+        setClosable(true);
+
+        lblId.setText("ID");
+
+        lblNome.setText("Nome");
+
+        lblCargo.setText("Cargo");
+
+        lblTelefone.setText("Telefone");
+
+        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefoneActionPerformed(evt);
+            }
+        });
+
+        lblSalario.setText("Salario");
+
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout abaCadastroLayout = new javax.swing.GroupLayout(abaCadastro);
+        abaCadastro.setLayout(abaCadastroLayout);
+        abaCadastroLayout.setHorizontalGroup(
+            abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblId)
+                    .addComponent(txtId)
+                    .addComponent(lblNome)
+                    .addComponent(txtNome)
+                    .addComponent(lblCargo)
+                    .addComponent(txtCargo)
+                    .addComponent(lblTelefone)
+                    .addComponent(txtTelefone)
+                    .addComponent(lblSalario)
+                    .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
+                .addContainerGap(316, Short.MAX_VALUE)
+                .addComponent(btnSalvar)
+                .addContainerGap())
+        );
+        abaCadastroLayout.setVerticalGroup(
+            abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblId)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCargo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTelefone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblSalario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(btnSalvar)
+                .addContainerGap())
+        );
+
+        containerAbasFuncionario.addTab("Cadastro", abaCadastro);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addComponent(containerAbasFuncionario)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addComponent(containerAbasFuncionario)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneActionPerformed
+
+    //Botão de salvar
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+         Funcionario fun = new Funcionario();
+
+        String idString = txtId.getText();
+        int id = Integer.parseInt(idString);
+        String idConvertido = String.valueOf(id);
+
+        fun.setId(id);
+        String nome = txtNome.getText();
+        fun.setNome(nome);
+        fun.setCargo(txtCargo.getText());
+        fun.setTelefone(txtTelefone.getText());
+        fun.setSalario(txtSalario.getText());
+
+        cf.salvar(fun);
+
+        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+
+        txtId.setText("");
+        txtNome.setText("");
+        txtCargo.setText("");
+        txtTelefone.setText("");
+        txtSalario.setText("");
+
+        txtId.requestFocus();
+
+//        montaTabela();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel abaCadastro;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JTabbedPane containerAbasFuncionario;
+    private javax.swing.JLabel lblCargo;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblSalario;
+    private javax.swing.JLabel lblTelefone;
+    private javax.swing.JTextField txtCargo;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtSalario;
+    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
