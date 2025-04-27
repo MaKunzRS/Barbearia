@@ -32,6 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnCadastros = new javax.swing.JMenu();
         mnClientes = new javax.swing.JMenuItem();
         mnFuncionarios = new javax.swing.JMenuItem();
+        mnProdutos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +65,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         mnCadastros.add(mnFuncionarios);
 
+        mnProdutos.setText("Produtos");
+        mnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnProdutosActionPerformed(evt);
+            }
+        });
+        mnCadastros.add(mnProdutos);
+
         mnBarra.add(mnCadastros);
 
         setJMenuBar(mnBarra);
@@ -95,6 +104,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tf.setVisible(true);
     }//GEN-LAST:event_mnFuncionariosActionPerformed
 
+    //Inicia tela produto
+    private void mnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProdutosActionPerformed
+        TelaProduto tp = new TelaProduto();
+        dskPainel.add(tp);
+        tp.setVisible(true);
+    }//GEN-LAST:event_mnProdutosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -115,5 +131,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu mnCadastros;
     private javax.swing.JMenuItem mnClientes;
     private javax.swing.JMenuItem mnFuncionarios;
+    private javax.swing.JMenuItem mnProdutos;
     // End of variables declaration//GEN-END:variables
 }
