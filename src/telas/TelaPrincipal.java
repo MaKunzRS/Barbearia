@@ -31,6 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnBarra = new javax.swing.JMenuBar();
         mnCadastros = new javax.swing.JMenu();
         mnClientes = new javax.swing.JMenuItem();
+        mnFuncionarios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         mnCadastros.add(mnClientes);
+
+        mnFuncionarios.setText("Funcionários");
+        mnCadastros.add(mnFuncionarios);
 
         mnBarra.add(mnCadastros);
 
@@ -99,5 +103,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar mnBarra;
     private javax.swing.JMenu mnCadastros;
     private javax.swing.JMenuItem mnClientes;
+    private javax.swing.JMenuItem mnFuncionarios;
     // End of variables declaration//GEN-END:variables
 }
