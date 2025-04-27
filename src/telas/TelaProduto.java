@@ -4,15 +4,19 @@
  */
 package telas;
 
+import controladores.ControlaProduto;
+import entidades.Cliente;
+import entidades.Produto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Matheus
  */
 public class TelaProduto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaProduto
-     */
+    ControlaProduto cp = new ControlaProduto();
+
     public TelaProduto() {
         initComponents();
     }
@@ -40,6 +44,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         txtTipo = new javax.swing.JTextField();
         lblEstoque = new javax.swing.JLabel();
         txtEstoque = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -114,17 +119,30 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         containerAbasProduto.addTab("Cadastro", abaCadastro);
 
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(containerAbasProduto)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalvar)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(containerAbasProduto)
-                .addGap(42, 42, 42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalvar)
+                .addGap(13, 13, 13))
         );
 
         pack();
@@ -134,9 +152,53 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoActionPerformed
 
+    //Botão de salvar
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+
+        Produto pr = new Produto();
+
+        String idString = txtId.getText();
+        int id = Integer.parseInt(idString);
+        String idConvertido = String.valueOf(id);
+
+        pr.setId(id);
+
+        pr.setDescricao(txtDescricao.getText());
+        pr.setPreco(txtPreco.getText());
+        pr.setTipo(txtTipo.getText());
+
+        String tempoEstimadoString = txtTempoEstimado.getText();
+        int tempoEstimado = Integer.parseInt(tempoEstimadoString);
+        String tempoEstimadoConvertido = String.valueOf(tempoEstimado);
+
+        pr.setTempoEstimado(tempoEstimado);
+
+        String estoqueString = txtEstoque.getText();
+        int estoque = Integer.parseInt(estoqueString);
+        String estoqueConvertido = String.valueOf(estoque);
+
+        pr.setEstoque(estoque);
+
+        cp.salvar(pr);
+
+        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+
+        txtId.setText("");
+        txtDescricao.setText("");
+        txtPreco.setText("");
+        txtTipo.setText("");
+        txtTempoEstimado.setText("");
+        txtEstoque.setText("");
+
+        txtId.requestFocus();
+
+    //    montaTabela();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JTabbedPane containerAbasProduto;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblEstoque;
