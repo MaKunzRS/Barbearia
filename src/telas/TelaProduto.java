@@ -302,9 +302,9 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         txtId.requestFocus();
 
-    //    montaTabela();
+        montaTabela();
     }//GEN-LAST:event_btnSalvarActionPerformed
-
+    //Botão atualizar
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
