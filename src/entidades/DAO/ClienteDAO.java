@@ -4,10 +4,15 @@
  */
 package entidades.DAO;
 
+import entidades.Cliente;
+
 /**
  *
  * @author matheus.kunz
  */
 public class ClienteDAO {
     
+    public void salvar(Cliente c){
+        String sql= "";
+    }
 }
