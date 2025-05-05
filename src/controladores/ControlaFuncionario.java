@@ -4,7 +4,10 @@
  */
 package controladores;
 
+
+import entidades.DAO.FuncionarioDAO;
 import entidades.Funcionario;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -13,14 +16,25 @@ import java.util.ArrayList;
  */
 public class ControlaFuncionario {
     
-    ArrayList<Funcionario> vtrFuncionario = new ArrayList();
-    
-    public void salvar(Funcionario f){
-        vtrFuncionario.add(f);
+   FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+
+      public boolean salvar(Funcionario f) {
+        try {
+            funcionarioDAO.salvar(f);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao salvar funcionario: " + ex.getMessage());
+            return false;
+        }
     }
     
-    public ArrayList<Funcionario> recuperarTodos(){
-         
-        return vtrFuncionario;
+     public ArrayList<Funcionario> recuperarTodos(){
+        ArrayList<Funcionario> vetorFuncionarios = null;
+        try {
+            vetorFuncionarios = funcionarioDAO.recuperarTodos();
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar funcionario: " + ex.getMessage());
+        }
+        return vetorFuncionarios;
     }
 }
