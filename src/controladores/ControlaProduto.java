@@ -4,7 +4,9 @@
  */
 package controladores;
 
+import entidades.DAO.ProdutoDAO;
 import entidades.Produto;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -13,15 +15,28 @@ import java.util.ArrayList;
  */
 public class ControlaProduto {
     
-    ArrayList<Produto> vtrProduto = new ArrayList();
-    
-    public void salvar(Produto p){
-        vtrProduto.add(p);
+ProdutoDAO produtoDAO = new ProdutoDAO();
+
+      public boolean salvar(Produto p) {
+        try {
+            produtoDAO.salvar(p);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao salvar produto: " + ex.getMessage());
+            return false;
+        }
     }
     
     public ArrayList<Produto> recuperarTodos(){
         
-        return vtrProduto;
+        ArrayList<Produto> vetorProdutos = null;
+        try {
+            vetorProdutos = produtoDAO.recuperarTodos();
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar produtos: " + ex.getMessage());
+        }
+        return vetorProdutos;
+    
     }
     
 }
