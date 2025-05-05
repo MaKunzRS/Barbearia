@@ -5,6 +5,8 @@
 package controladores;
 
 import entidades.Cliente;
+import entidades.DAO.ClienteDAO;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -12,17 +14,26 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ControlaCliente {
+    
+    ClienteDAO clienteDAO = new ClienteDAO();
 
-    ArrayList<Cliente> vtrClientes = new ArrayList();
-
-    public void salvar(Cliente c) {
-        vtrClientes.add(c);
-
+      public boolean salvar(Cliente c) {
+        try {
+            clienteDAO.salvar(c);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao salvar cliente: " + ex.getMessage());
+            return false;
+        }
     }
 
-    public ArrayList<Cliente> recuperarTodos(){
-
-        return vtrClientes;
-
+     public ArrayList<Cliente> recuperarTodos(){
+        ArrayList<Cliente> vetorClientes = null;
+        try {
+            vetorClientes = clienteDAO.recuperarTodos();
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar clientes: " + ex.getMessage());
+        }
+        return vetorClientes;
     }
 }
