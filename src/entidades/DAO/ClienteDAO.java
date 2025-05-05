@@ -20,7 +20,7 @@ public class ClienteDAO {
 
     public void salvar(Cliente c) throws SQLException {
         String sql = ""
-                + "INSERT INTO cliente (nome, cpf, endereco, data_nasc) VALUES ("
+                + "INSERT INTO cliente (nome, cpf, telefone, email, data_nasc) VALUES ("
                 + "'" + c.getNome() + "',"
                 + "'" + c.getCpf() + "',"
                 + "'" + c.getTelefone() + "',"
@@ -49,7 +49,7 @@ public class ClienteDAO {
             cliente.setCpf(resultadoQ.getString("cpf"));
             cliente.setTelefone(resultadoQ.getString("telefone"));
             cliente.setEmail(resultadoQ.getString("email"));
-            cliente.setDataNascimento(resultadoQ.getString("data_nascimento"));
+            cliente.setDataNascimento(resultadoQ.getString("data_nasc"));
 
             clientes.add(cliente);
         }
