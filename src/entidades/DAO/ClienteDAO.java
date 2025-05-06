@@ -15,8 +15,8 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ClienteDAO {
-    
-     ResultSet resultadoQ = null;
+
+    ResultSet resultadoQ = null;
 
     public void salvar(Cliente c) throws SQLException {
         String sql = ""
@@ -55,7 +55,27 @@ public class ClienteDAO {
         }
 
         return clientes;
-    
+
+    }
+
+    public Cliente recuperar(int id) throws SQLException {
+        Cliente cliente = null;
+        String sql = ""
+                + "SELECT * FROM cliente WHERE id = " + id;
+
+        resultadoQ = ConexaoBD.executeQuery(sql);
+
+        if (resultadoQ.next()) {
+            cliente = new Cliente();
+
+            cliente.setId(resultadoQ.getInt("id"));
+            cliente.setNome(resultadoQ.getString("nome"));
+            cliente.setTelefone(resultadoQ.getString("telefone"));
+            cliente.setCpf(resultadoQ.getString("cpf"));
+            cliente.setEmail(resultadoQ.getString("email"));
+            cliente.setDataNascimento(resultadoQ.getString("data_nasc"));
+        }
+        return cliente;
     }
 
 }
