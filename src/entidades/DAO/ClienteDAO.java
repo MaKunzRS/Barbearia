@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ClienteDAO {
-
+    
     ResultSet resultadoQ = null;
-
+    
     public void salvar(Cliente c) throws SQLException {
         String sql = ""
                 + "INSERT INTO cliente (nome, cpf, telefone, email, data_nasc) VALUES ("
@@ -27,47 +27,47 @@ public class ClienteDAO {
                 + "'" + c.getEmail() + "',"
                 + "'" + c.getDataNascimento() + "'"
                 + ")";
-
+        
         System.out.println("sql: " + sql);
-
+        
         ConexaoBD.executeUpdate(sql);
     }
-
+    
     public ArrayList<Cliente> recuperarTodos() throws SQLException {
         ArrayList<Cliente> clientes = new ArrayList();
-
+        
         String sql = ""
                 + "SELECT * FROM cliente ";
-
+        
         resultadoQ = ConexaoBD.executeQuery(sql);
-
+        
         while (resultadoQ.next()) {
             Cliente cliente = new Cliente();
-
+            
             cliente.setId(resultadoQ.getInt("id"));
             cliente.setNome(resultadoQ.getString("nome"));
             cliente.setCpf(resultadoQ.getString("cpf"));
             cliente.setTelefone(resultadoQ.getString("telefone"));
             cliente.setEmail(resultadoQ.getString("email"));
             cliente.setDataNascimento(resultadoQ.getString("data_nasc"));
-
+            
             clientes.add(cliente);
         }
-
+        
         return clientes;
-
+        
     }
-
+    
     public Cliente recuperar(int id) throws SQLException {
         Cliente cliente = null;
         String sql = ""
                 + "SELECT * FROM cliente WHERE id = " + id;
-
+        
         resultadoQ = ConexaoBD.executeQuery(sql);
-
+        
         if (resultadoQ.next()) {
             cliente = new Cliente();
-
+            
             cliente.setId(resultadoQ.getInt("id"));
             cliente.setNome(resultadoQ.getString("nome"));
             cliente.setTelefone(resultadoQ.getString("telefone"));
@@ -77,5 +77,30 @@ public class ClienteDAO {
         }
         return cliente;
     }
-
+    
+    public void editar(Cliente c) throws SQLException {
+        String sql = ""
+                + "UPDATE cliente "
+                + "SET "
+                + "nome = '" + c.getNome() + "',"
+                + "telefone = '" + c.getTelefone() + "',"
+                + "cpf = '" + c.getCpf() + "',"
+                + "email = '" + c.getEmail() + "',"
+                + "data_nasc = '" + c.getDataNascimento() + "',"
+                + "WHERE id = " + c.getId();
+        
+        System.out.println("sql: " + sql);
+        
+        ConexaoBD.executeUpdate(sql);
+        
+    }
+    
+    public void excluir(int id) throws SQLException{
+        String sql = ""
+                + "DELETE FROM cliente WHERE id = " + id;
+        
+        System.out.println("sql: " + sql);
+        
+        ConexaoBD.executeUpdate(sql);
+    }
 }
