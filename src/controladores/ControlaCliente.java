@@ -47,6 +47,16 @@ public class ControlaCliente {
         }
     }
 
+    public Cliente recuperar(int id) {
+        try {
+            Cliente cliente = clienteDAO.recuperar(id);
+            return cliente;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar cliente: " + ex.getMessage());
+            return null;
+        }
+    }
+
     public ArrayList<Cliente> recuperarTodos() {
         ArrayList<Cliente> vetorClientes = null;
         try {
