@@ -97,8 +97,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         containerAbasCliente = new javax.swing.JTabbedPane();
         abaCadastro = new javax.swing.JPanel();
-        txtId = new javax.swing.JTextField();
-        lblId = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         lblDataNasc = new javax.swing.JLabel();
@@ -116,14 +114,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         btnAtualiza = new javax.swing.JButton();
 
         setClosable(true);
-
-        txtId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
-            }
-        });
-
-        lblId.setText("ID");
 
         lblNome.setText("Nome");
 
@@ -150,7 +140,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblId)
                         .addComponent(lblNome)
                         .addComponent(lblDataNasc)
                         .addComponent(lblTelefone)
@@ -159,8 +148,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                         .addComponent(txtDataNasc)
                         .addComponent(txtEmail)
                         .addComponent(lblCpf)
-                        .addComponent(txtCpf)
-                        .addComponent(txtId))
+                        .addComponent(txtCpf))
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(320, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
@@ -171,17 +159,13 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblId)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCpf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDataNasc)
@@ -259,19 +243,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdActionPerformed
-
     //Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Cliente cl = new Cliente();
 
-        String idString = txtId.getText();
-        int id = Integer.parseInt(idString);
-        String idConvertido = String.valueOf(id);
 
-        cl.setId(id);
         String nome = txtNome.getText();
         cl.setNome(nome);
         cl.setCpf(txtCpf.getText());
@@ -283,14 +259,13 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         JOptionPane.showMessageDialog(null, "Salvo com sucesso");
 
-        txtId.setText("");
         txtNome.setText("");
         txtCpf.setText("");
         txtTelefone.setText("");
         txtEmail.setText("");
         txtDataNasc.setText("");
 
-        txtId.requestFocus();
+        txtNome.requestFocus();
 
         montaTabela();
 
@@ -311,14 +286,12 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblDataNasc;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTable tblClientes;
     private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtDataNasc;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
