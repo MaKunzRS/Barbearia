@@ -14,10 +14,10 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ControlaCliente {
-    
+
     ClienteDAO clienteDAO = new ClienteDAO();
 
-      public boolean salvar(Cliente c) {
+    public boolean salvar(Cliente c) {
         try {
             clienteDAO.salvar(c);
             return true;
@@ -27,7 +27,27 @@ public class ControlaCliente {
         }
     }
 
-     public ArrayList<Cliente> recuperarTodos(){
+    public boolean editar(Cliente c) {
+        try {
+            clienteDAO.editar(c);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao esitar cliente: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public boolean excluir(int id) {
+        try {
+            clienteDAO.excluir(id);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao excluir cliente: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public ArrayList<Cliente> recuperarTodos() {
         ArrayList<Cliente> vetorClientes = null;
         try {
             vetorClientes = clienteDAO.recuperarTodos();
