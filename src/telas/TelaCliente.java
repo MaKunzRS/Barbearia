@@ -17,6 +17,7 @@ import javax.swing.table.AbstractTableModel;
 public class TelaCliente extends javax.swing.JInternalFrame {
 
     ControlaCliente cc = new ControlaCliente();
+    int codigo = 0;
 
     public TelaCliente() {
         initComponents();
@@ -113,6 +114,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         tblClientes = new javax.swing.JTable();
         btnAtualiza = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -214,6 +216,13 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout abaListagemLayout = new javax.swing.GroupLayout(abaListagem);
         abaListagem.setLayout(abaListagemLayout);
         abaListagemLayout.setHorizontalGroup(
@@ -223,7 +232,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(btnExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAtualiza)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAtualiza)
+                    .addComponent(btnEditar))
                 .addGap(16, 16, 16))
         );
         abaListagemLayout.setVerticalGroup(
@@ -233,6 +244,8 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAtualiza)
                     .addComponent(btnExcluir))
@@ -266,20 +279,38 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         cl.setEmail(txtEmail.getText());
         cl.setDataNascimento(txtDataNasc.getText());
 
-        cc.salvar(cl);
+        if (codigo == 0) {
+            boolean retorno = cc.salvar(cl);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
 
-        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                txtNome.setText("");
+                txtCpf.setText("");
+                txtTelefone.setText("");
+                txtEmail.setText("");
+                txtDataNasc.setText("");
 
-        txtNome.setText("");
-        txtCpf.setText("");
-        txtTelefone.setText("");
-        txtEmail.setText("");
-        txtDataNasc.setText("");
-
-        txtNome.requestFocus();
-
-        montaTabela();
-
+                txtNome.requestFocus();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        } else {
+            cl.setId(codigo);
+            boolean retorno = cc.editar(cl);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Editado com sucesso");
+                txtNome.setText("");
+                txtCpf.setText("");
+                txtTelefone.setText("");
+                txtEmail.setText("");
+                txtDataNasc.setText("");
+                montaTabela();
+                containerAbasCliente.setSelectedIndex(1);
+                codigo = 0;
+            } else {
+                 JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizaActionPerformed
@@ -300,11 +331,39 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+
+        String idString = String.valueOf(tblClientes.getValueAt(tblClientes.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        Cliente c = cc.recuperar(id);
+
+        if (c == null) {
+            JOptionPane.showMessageDialog(null, "Registro não localizado!");
+        } else {
+            // preenche a variavel codigo que sera usada para salvar ou editar
+            codigo = c.getId();
+
+            // mudar a aba ativa para Cadastro
+            containerAbasCliente.setSelectedIndex(0);
+
+            // coloca dados nos campos de interface
+            txtNome.setText(c.getNome());
+            txtCpf.setText(c.getCpf());
+            txtDataNasc.setText(c.getDataNascimento());
+            txtTelefone.setText(c.getTelefone());
+            txtEmail.setText(c.getEmail());
+
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
     private javax.swing.JPanel abaListagem;
     private javax.swing.JButton btnAtualiza;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JTabbedPane containerAbasCliente;

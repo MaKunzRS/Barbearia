@@ -86,7 +86,7 @@ public class ClienteDAO {
                 + "telefone = '" + c.getTelefone() + "',"
                 + "cpf = '" + c.getCpf() + "',"
                 + "email = '" + c.getEmail() + "',"
-                + "data_nasc = '" + c.getDataNascimento() + "',"
+                + "data_nasc = '" + c.getDataNascimento() + "' "
                 + "WHERE id = " + c.getId();
         
         System.out.println("sql: " + sql);
