@@ -10,15 +10,18 @@ package entidades;
  */
 public class Funcionario {
 
+//Variáveis
     private int id;
     private String nome;
     private String cargo;
     private String telefone;
     private String salario;
 
+//Construtor
     public Funcionario() {
     }
 
+//Getters e Setters
     public int getId() {
         return id;
     }
@@ -59,6 +62,7 @@ public class Funcionario {
         this.salario = salario;
     }
 
+//Método para imprimir atributos
     public void exibeAtributos() {
         System.out.println(id);
         System.out.println(nome);

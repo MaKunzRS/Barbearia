@@ -17,6 +17,7 @@ public class ControlaCliente {
 
     ClienteDAO clienteDAO = new ClienteDAO();
 
+//Método para salvar cliente
     public boolean salvar(Cliente c) {
         try {
             clienteDAO.salvar(c);
@@ -27,6 +28,7 @@ public class ControlaCliente {
         }
     }
 
+//Método para editar cliente
     public boolean editar(Cliente c) {
         try {
             clienteDAO.editar(c);
@@ -37,6 +39,7 @@ public class ControlaCliente {
         }
     }
 
+//Método para excluir cliente
     public boolean excluir(int id) {
         try {
             clienteDAO.excluir(id);
@@ -47,6 +50,7 @@ public class ControlaCliente {
         }
     }
 
+//Método para recuperar um cliente
     public Cliente recuperar(int id) {
         try {
             Cliente cliente = clienteDAO.recuperar(id);
@@ -57,6 +61,7 @@ public class ControlaCliente {
         }
     }
 
+//Método para recuperar todos os clientes
     public ArrayList<Cliente> recuperarTodos() {
         ArrayList<Cliente> vetorClientes = null;
         try {

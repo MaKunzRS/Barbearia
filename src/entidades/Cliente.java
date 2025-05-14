@@ -1,4 +1,4 @@
-                                                                                /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -12,6 +12,7 @@ import java.util.Date;
  */
 public class Cliente {
 
+//Variáveis    
     private int id;
     private String nome;
     private String cpf;
@@ -19,9 +20,11 @@ public class Cliente {
     private String email;
     private String dataNascimento;
 
+//Construtor    
     public Cliente() {
     }
 
+//Getters e Setters
     public int getId() {
         return id;
     }
@@ -62,19 +65,20 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public void exibeAtributos() {
-        System.out.println(id);
-        System.out.println(nome);
-        System.out.println(telefone);
-        System.out.println(email);
-        System.out.println(dataNascimento);
-    }
-
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+////Método para imprimir atributos
+    public void exibeAtributos() {
+        System.out.println(id);
+        System.out.println(nome);
+        System.out.println(telefone);
+        System.out.println(email);
+        System.out.println(dataNascimento);
     }
 }

@@ -12,15 +12,18 @@ import java.util.Date;
  */
 public class Agendamento {
 
+//Variáveis
     private int id;
     private int idPessoa;
     private int idFuncionario;
     private Date dataHora;
     private String status;
 
+//Construtor
     public Agendamento() {
     }
 
+//Getters e Setters
     public int getId() {
         return id;
     }
@@ -61,6 +64,7 @@ public class Agendamento {
         this.status = status;
     }
 
+//Método para imprimir atributos
     public void exibeAtributos() {
         System.out.println(id);
         System.out.println(idPessoa);

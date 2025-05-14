@@ -18,6 +18,7 @@ public class FuncionarioDAO {
 
     ResultSet resultadoQ = null;
 
+//Método para salvar no BD
     public void salvar(Funcionario f) throws SQLException {
         String sql = ""
                 + "INSERT INTO funcionario (nome, cargo, telefone, salario) VALUES ("
@@ -32,6 +33,7 @@ public class FuncionarioDAO {
         ConexaoBD.executeUpdate(sql);
     }
 
+//Método para consultar no BD
     public Funcionario recuperar(int id) throws SQLException {
         Funcionario funcionario = null;
         String sql = ""
@@ -51,6 +53,7 @@ public class FuncionarioDAO {
         return funcionario;
     }
 
+//Método para editar no BD
     public void editar(Funcionario f) throws SQLException {
         String sql = ""
                 + "UPDATE funcionario "
@@ -67,6 +70,7 @@ public class FuncionarioDAO {
 
     }
 
+//Método para consultar todos no BD
     public ArrayList<Funcionario> recuperarTodos() throws SQLException {
         ArrayList<Funcionario> funcionarios = new ArrayList();
 
@@ -91,6 +95,7 @@ public class FuncionarioDAO {
 
     }
 
+//Método para excluir no BD
     public void excluir(int id) throws SQLException {
         String sql = ""
                 + "DELETE FROM funcionario WHERE id = " + id;

@@ -10,6 +10,7 @@ package entidades;
  */
 public class Produto {
 
+//Variáveis
     private int id;
     private String descricao;
     private String preco;
@@ -17,9 +18,11 @@ public class Produto {
     private String tipo;
     private int estoque;
 
+//Construtor
     public Produto() {
     }
 
+//Getters e Setters
     public int getId() {
         return id;
     }
@@ -68,6 +71,7 @@ public class Produto {
         this.estoque = estoque;
     }
 
+//Método para imprimir atributos
     public void exibeAtributos() {
         System.out.println(id);
         System.out.println(descricao);

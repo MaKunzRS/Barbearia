@@ -16,6 +16,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TelaCliente extends javax.swing.JInternalFrame {
 
+//Variáveis
     ControlaCliente cc = new ControlaCliente();
     int codigo = 0;
 
@@ -24,6 +25,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         montaTabela();
     }
 
+//Método para montar a tabela de listagem
     private void montaTabela() {
         ArrayList<Cliente> clientes = cc.recuperarTodos();
         if (clientes == null) {
@@ -267,7 +269,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Botão de salvar
+//Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Cliente cl = new Cliente();
 
@@ -307,15 +309,17 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 containerAbasCliente.setSelectedIndex(1);
                 codigo = 0;
             } else {
-                 JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
             }
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+//Botão de atualizar
     private void btnAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizaActionPerformed
         montaTabela();
     }//GEN-LAST:event_btnAtualizaActionPerformed
 
+//Botão de excluir
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         String idString = String.valueOf(tblClientes.getValueAt(tblClientes.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
@@ -330,6 +334,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+//Botão de editar
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
 
         String idString = String.valueOf(tblClientes.getValueAt(tblClientes.getSelectedRow(), 0));
@@ -340,13 +345,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         if (c == null) {
             JOptionPane.showMessageDialog(null, "Registro não localizado!");
         } else {
-            // preenche a variavel codigo que sera usada para salvar ou editar
+
             codigo = c.getId();
 
-            // mudar a aba ativa para Cadastro
             containerAbasCliente.setSelectedIndex(0);
 
-            // coloca dados nos campos de interface
             txtNome.setText(c.getNome());
             txtCpf.setText(c.getCpf());
             txtDataNasc.setText(c.getDataNascimento());

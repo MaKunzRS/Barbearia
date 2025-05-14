@@ -16,15 +16,17 @@ import javax.swing.table.AbstractTableModel;
  * @author Matheus
  */
 public class TelaProduto extends javax.swing.JInternalFrame {
-    
+
+//Variáveis
     ControlaProduto cp = new ControlaProduto();
     int codigo = 0;
-    
+
     public TelaProduto() {
         initComponents();
         montaTabela();
     }
-    
+
+//Método para montar tabela de listagem
     private void montaTabela() {
         ArrayList<Produto> produtos = cp.recuperarTodos();
         if (produtos == null) {
@@ -50,21 +52,21 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                             return "";
                     }
                 }
-                
+
                 @Override
                 public int getColumnCount() {
                     return 6;
                 }
-                
+
                 @Override
                 public int getRowCount() {
                     return produtos.size();
                 }
-                
+
                 @Override
                 public Object getValueAt(int rowIndex, int columnIndex) {
                     Produto p = produtos.get(rowIndex);
-                    
+
                     if (p != null) {
                         switch (columnIndex) {
                             case 0:
@@ -80,19 +82,19 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                             case 5:
                                 return p.getEstoque();
                         }
-                        
+
                     }
-                    
+
                     return "n/d";
                 }
             });
-            
+
             tblProdutos.getColumnModel().getColumn(0).setMinWidth(80);
             tblProdutos.getColumnModel().getColumn(0).setPreferredWidth(80);
             tblProdutos.getColumnModel().getColumn(0).setMaxWidth(20);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -280,11 +282,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Botão de salvar
+//Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
+
         Produto pr = new Produto();
-        
+
         String descricao = txtDescricao.getText();
         pr.setDescricao(descricao);
         pr.setPreco(txtPreco.getText());
@@ -296,15 +298,15 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         }
         pr.setTipo(cbTipo.getSelectedItem().toString());
         System.out.println(pr.getTipo());
-        
+
         if (codigo == 0) {
             if (cbTipo.getSelectedItem() == "") {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
             } else {
                 if (cbTipo.getSelectedItem() == "Serviço") {
-                    
+
                     cbTipo.setSelectedIndex(1);
-                    
+
                 } else if (cbTipo.getSelectedItem() == "Produto") {
                     cbTipo.setSelectedIndex(2);
                 } else {
@@ -313,13 +315,13 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                 boolean retorno = cp.salvar(pr);
                 if (retorno) {
                     JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-                    
+
                     txtDescricao.setText("");
                     txtEstoque.setText("");
                     txtPreco.setText("");
                     txtTempoEstimado.setText("");
                     cbTipo.setSelectedItem("");
-                    
+
                     txtDescricao.requestFocus();
                 } else {
                     JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
@@ -338,15 +340,15 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                     txtPreco.setText("");
                     txtTempoEstimado.setText("");
                     if (cbTipo.getSelectedItem() == "Serviço") {
-                        
+
                         cbTipo.setSelectedIndex(1);
-                        
+
                     } else if (cbTipo.getSelectedItem() == "Produto") {
                         cbTipo.setSelectedIndex(2);
                     } else {
                         JOptionPane.showMessageDialog(this, "Tipo não pode ser vazio!");
                     }
-                    
+
                     montaTabela();
                     containerAbasProduto.setSelectedIndex(1);
                     codigo = 0;
@@ -354,18 +356,19 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
-    //Botão atualizar
+//Botão atualizar
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
+//Botão editar
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
+
         String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
-        
+
         Produto p = cp.recuperar(id);
-        
+
         if (p == null) {
             JOptionPane.showMessageDialog(null, "Registro não localizado!");
         } else {
@@ -386,11 +389,12 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnEditarActionPerformed
 
+//Botão excluir
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
+
         String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
-        
+
         boolean retorno = cp.excluir(id);
         if (retorno) {
             JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
@@ -401,6 +405,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+//Abertura da combo ao editar
     private void cbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoActionPerformed
         if (cbTipo.getSelectedItem() == "Serviço") {
             txtEstoque.setEnabled(false);

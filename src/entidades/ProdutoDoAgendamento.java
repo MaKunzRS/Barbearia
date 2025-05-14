@@ -10,13 +10,16 @@ package entidades;
  */
 public class ProdutoDoAgendamento {
 
+//Variáveis
     private int id;
     private int idAgendamento;
     private int idProduto;
 
+//Construtor
     public ProdutoDoAgendamento() {
     }
 
+//Getters e Setters
     public int getId() {
         return id;
     }
@@ -41,6 +44,7 @@ public class ProdutoDoAgendamento {
         this.idProduto = idProduto;
     }
 
+//Método para imprimir atributos
     public void exibeAtributos() {
         System.out.println(id);
         System.out.println(idAgendamento);

@@ -17,6 +17,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TelaFuncionario extends javax.swing.JInternalFrame {
 
+//Variáveis
     ControlaFuncionario cf = new ControlaFuncionario();
     int codigo = 0;
 
@@ -25,6 +26,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         montaTabela();
     }
 
+//Método para montar a tabela de listagem
     private void montaTabela() {
         ArrayList<Funcionario> funcionarios = cf.recuperarTodos();
         if (funcionarios == null) {
@@ -255,7 +257,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Botão de salvar
+//Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         Funcionario fun = new Funcionario();
@@ -297,35 +299,9 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
             }
         }
-
-//        Funcionario fun = new Funcionario();
-//
-//        String idString = txtId.getText();
-//        int id = Integer.parseInt(idString);
-//        String idConvertido = String.valueOf(id);
-//
-//        fun.setId(id);
-//        String nome = txtNome.getText();
-//        fun.setNome(nome);
-//        fun.setCargo(txtCargo.getText());
-//        fun.setTelefone(txtTelefone.getText());
-//        fun.setSalario(txtSalario.getText());
-//
-//        cf.salvar(fun);
-//
-//        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-//
-//        txtId.setText("");
-//        txtNome.setText("");
-//        txtCargo.setText("");
-//        txtTelefone.setText("");
-//        txtSalario.setText("");
-//
-//        txtId.requestFocus();
-//
-//        montaTabela();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+//Botão excluir
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
         String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
@@ -340,6 +316,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+//Botão editar
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
 
         String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
@@ -366,9 +343,8 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    //Botão atualizar
+//Botão atualizar
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
