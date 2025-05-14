@@ -16,15 +16,15 @@ import javax.swing.table.AbstractTableModel;
  * @author Matheus
  */
 public class TelaProduto extends javax.swing.JInternalFrame {
-
+    
     ControlaProduto cp = new ControlaProduto();
     int codigo = 0;
-
+    
     public TelaProduto() {
         initComponents();
         montaTabela();
     }
-
+    
     private void montaTabela() {
         ArrayList<Produto> produtos = cp.recuperarTodos();
         if (produtos == null) {
@@ -50,21 +50,21 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                             return "";
                     }
                 }
-
+                
                 @Override
                 public int getColumnCount() {
                     return 6;
                 }
-
+                
                 @Override
                 public int getRowCount() {
                     return produtos.size();
                 }
-
+                
                 @Override
                 public Object getValueAt(int rowIndex, int columnIndex) {
                     Produto p = produtos.get(rowIndex);
-
+                    
                     if (p != null) {
                         switch (columnIndex) {
                             case 0:
@@ -80,19 +80,19 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                             case 5:
                                 return p.getEstoque();
                         }
-
+                        
                     }
-
+                    
                     return "n/d";
                 }
             });
-
+            
             tblProdutos.getColumnModel().getColumn(0).setMinWidth(80);
             tblProdutos.getColumnModel().getColumn(0).setPreferredWidth(80);
             tblProdutos.getColumnModel().getColumn(0).setMaxWidth(20);
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -136,7 +136,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Produto", "Serviço" }));
+        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Produto", "Serviço" }));
         cbTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTipoActionPerformed(evt);
@@ -279,47 +279,75 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     //Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-
+        
         Produto pr = new Produto();
-
+        
         String descricao = txtDescricao.getText();
         pr.setDescricao(descricao);
         pr.setPreco(txtPreco.getText());
-        pr.setEstoque(Integer.parseInt(txtEstoque.getText()));
+        if (!txtTempoEstimado.getText().trim().equals("")) {
+            pr.setTempoEstimado(Integer.parseInt(txtTempoEstimado.getText()));
+        }
+        if (!txtEstoque.getText().trim().equals("")) {
+            pr.setEstoque(Integer.parseInt(txtEstoque.getText()));
+        }
         pr.setTipo(cbTipo.getSelectedItem().toString());
-        pr.setTempoEstimado(Integer.parseInt(txtTempoEstimado.getText()));
-
+        System.out.println(pr.getTipo());
+        
         if (codigo == 0) {
-            boolean retorno = cp.salvar(pr);
-            if (retorno) {
-                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-
-                txtDescricao.setText("");
-                txtEstoque.setText("");
-                txtPreco.setText("");
-                txtTempoEstimado.setText("");
-                cbTipo.setSelectedItem("");
-
-                txtDescricao.requestFocus();
-            } else {
+            if (cbTipo.getSelectedItem() == "") {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            } else {
+                if (cbTipo.getSelectedItem() == "Serviço") {
+                    
+                    cbTipo.setSelectedIndex(1);
+                    
+                } else if (cbTipo.getSelectedItem() == "Produto") {
+                    cbTipo.setSelectedIndex(2);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Tipo não pode ser vazio!");
+                }
+                boolean retorno = cp.salvar(pr);
+                if (retorno) {
+                    JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                    
+                    txtDescricao.setText("");
+                    txtEstoque.setText("");
+                    txtPreco.setText("");
+                    txtTempoEstimado.setText("");
+                    cbTipo.setSelectedItem("");
+                    
+                    txtDescricao.requestFocus();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+                }
             }
         } else {
             pr.setId(codigo);
-            boolean retorno = cp.editar(pr);
-            if (retorno) {
-                JOptionPane.showMessageDialog(null, "Editado com sucesso");
-                txtDescricao.setText("");
-                txtEstoque.setText("");
-                txtPreco.setText("");
-                txtTempoEstimado.setText("");
-                cbTipo.setSelectedItem("");
-
-                montaTabela();
-                containerAbasProduto.setSelectedIndex(1);
-                codigo = 0;
+            if (cbTipo.getSelectedItem() == "") {
+                JOptionPane.showMessageDialog(null, "Tipo não pode ser vazio!");
             } else {
-                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+                boolean retorno = cp.editar(pr);
+                if (retorno) {
+                    JOptionPane.showMessageDialog(null, "Editado com sucesso");
+                    txtDescricao.setText("");
+                    txtEstoque.setText("");
+                    txtPreco.setText("");
+                    txtTempoEstimado.setText("");
+                    if (cbTipo.getSelectedItem() == "Serviço") {
+                        
+                        cbTipo.setSelectedIndex(1);
+                        
+                    } else if (cbTipo.getSelectedItem() == "Produto") {
+                        cbTipo.setSelectedIndex(2);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Tipo não pode ser vazio!");
+                    }
+                    
+                    montaTabela();
+                    containerAbasProduto.setSelectedIndex(1);
+                    codigo = 0;
+                }
             }
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -329,12 +357,12 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-
+        
         String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
-
+        
         Produto p = cp.recuperar(id);
-
+        
         if (p == null) {
             JOptionPane.showMessageDialog(null, "Registro não localizado!");
         } else {
@@ -349,17 +377,17 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             txtPreco.setText(p.getPreco());
             txtEstoque.setText(String.valueOf(p.getEstoque()));
             txtTempoEstimado.setText(String.valueOf(p.getTempoEstimado()));
-
+            cbTipo.setSelectedItem(p.getTipo());
             txtDescricao.requestFocus();
         }
 
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-
+        
         String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
-
+        
         boolean retorno = cp.excluir(id);
         if (retorno) {
             JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
@@ -371,11 +399,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void cbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoActionPerformed
-        if (cbTipo.getSelectedItem() == "Serviço"){
+        if (cbTipo.getSelectedItem() == "Serviço") {
             txtEstoque.setEnabled(false);
             txtTempoEstimado.setEnabled(true);
-        } else if (cbTipo.getSelectedItem() == "Produto"){
-             txtEstoque.setEnabled(true);
+        } else if (cbTipo.getSelectedItem() == "Produto") {
+            txtEstoque.setEnabled(true);
             txtTempoEstimado.setEnabled(false);
         }
     }//GEN-LAST:event_cbTipoActionPerformed
