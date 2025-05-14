@@ -14,10 +14,10 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ControlaProduto {
-    
-ProdutoDAO produtoDAO = new ProdutoDAO();
 
-      public boolean salvar(Produto p) {
+    ProdutoDAO produtoDAO = new ProdutoDAO();
+
+    public boolean salvar(Produto p) {
         try {
             produtoDAO.salvar(p);
             return true;
@@ -26,9 +26,39 @@ ProdutoDAO produtoDAO = new ProdutoDAO();
             return false;
         }
     }
+
+    public boolean editar(Produto p) {
+        try {
+            produtoDAO.editar(p);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao editar produto: " + ex.getMessage());
+            return false;
+        }
+    }
     
-    public ArrayList<Produto> recuperarTodos(){
-        
+     public boolean excluir(int id) {
+        try {
+            produtoDAO.excluir(id);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao excluir produto: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public Produto recuperar(int id) {
+        try {
+            Produto produto = produtoDAO.recuperar(id);
+            return produto;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar produto: " + ex.getMessage());
+            return null;
+        }
+    }
+
+    public ArrayList<Produto> recuperarTodos() {
+
         ArrayList<Produto> vetorProdutos = null;
         try {
             vetorProdutos = produtoDAO.recuperarTodos();
@@ -36,7 +66,7 @@ ProdutoDAO produtoDAO = new ProdutoDAO();
             System.out.println("Erro ao consultar produtos: " + ex.getMessage());
         }
         return vetorProdutos;
-    
+
     }
-    
+
 }

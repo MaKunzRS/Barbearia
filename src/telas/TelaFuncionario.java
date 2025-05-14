@@ -18,9 +18,11 @@ import javax.swing.table.AbstractTableModel;
 public class TelaFuncionario extends javax.swing.JInternalFrame {
 
     ControlaFuncionario cf = new ControlaFuncionario();
+    int codigo = 0;
 
     public TelaFuncionario() {
         initComponents();
+        montaTabela();
     }
 
     private void montaTabela() {
@@ -91,39 +93,31 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        abaListagem = new javax.swing.JTabbedPane();
+        containerAbasFuncionario = new javax.swing.JTabbedPane();
         abaCadastro = new javax.swing.JPanel();
-        lblId = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         lblCargo = new javax.swing.JLabel();
-        txtCargo = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JTextField();
         lblSalario = new javax.swing.JLabel();
         txtSalario = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        txtCargo = new javax.swing.JTextField();
+        abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFuncionarios = new javax.swing.JTable();
         btnAtualizar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
-
-        lblId.setText("ID");
 
         lblNome.setText("Nome");
 
         lblCargo.setText("Cargo");
 
         lblTelefone.setText("Telefone");
-
-        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefoneActionPerformed(evt);
-            }
-        });
 
         lblSalario.setText("Salario");
 
@@ -140,31 +134,27 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblId)
-                    .addComponent(txtId)
-                    .addComponent(lblNome)
-                    .addComponent(txtNome)
-                    .addComponent(lblCargo)
-                    .addComponent(txtCargo)
-                    .addComponent(lblTelefone)
-                    .addComponent(txtTelefone)
-                    .addComponent(lblSalario)
-                    .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
-                .addContainerGap(414, Short.MAX_VALUE)
-                .addComponent(btnSalvar)
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
+                        .addGap(0, 408, Short.MAX_VALUE)
+                        .addComponent(btnSalvar))
+                    .addGroup(abaCadastroLayout.createSequentialGroup()
+                        .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblNome)
+                            .addComponent(txtNome)
+                            .addComponent(lblCargo)
+                            .addComponent(lblTelefone)
+                            .addComponent(txtTelefone)
+                            .addComponent(lblSalario)
+                            .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(txtCargo))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblId)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,7 +175,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        abaListagem.addTab("Cadastro", abaCadastro);
+        containerAbasFuncionario.addTab("Cadastro", abaCadastro);
 
         tblFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,100 +197,204 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 111, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtualizar)
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout abaListagemLayout = new javax.swing.GroupLayout(abaListagem);
+        abaListagem.setLayout(abaListagemLayout);
+        abaListagemLayout.setHorizontalGroup(
+            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaListagemLayout.createSequentialGroup()
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(abaListagemLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAtualizar)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+        abaListagemLayout.setVerticalGroup(
+            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaListagemLayout.createSequentialGroup()
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(abaListagemLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 11, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAtualizar)
                 .addContainerGap())
         );
 
-        abaListagem.addTab("Listagem", jPanel1);
+        containerAbasFuncionario.addTab("Listagem", abaListagem);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(abaListagem)
+            .addComponent(containerAbasFuncionario)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(abaListagem)
+            .addComponent(containerAbasFuncionario)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
 
     //Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         Funcionario fun = new Funcionario();
 
-        String idString = txtId.getText();
-        int id = Integer.parseInt(idString);
-        String idConvertido = String.valueOf(id);
-
-        fun.setId(id);
         String nome = txtNome.getText();
         fun.setNome(nome);
         fun.setCargo(txtCargo.getText());
         fun.setTelefone(txtTelefone.getText());
         fun.setSalario(txtSalario.getText());
 
-        cf.salvar(fun);
+        if (codigo == 0) {
+            boolean retorno = cf.salvar(fun);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
 
-        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                txtNome.setText("");
+                txtCargo.setText("");
+                txtTelefone.setText("");
+                txtSalario.setText("");
 
-        txtId.setText("");
-        txtNome.setText("");
-        txtCargo.setText("");
-        txtTelefone.setText("");
-        txtSalario.setText("");
+                txtNome.requestFocus();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        } else {
+            fun.setId(codigo);
+            boolean retorno = cf.editar(fun);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Editado com sucesso");
+                txtNome.setText("");
+                txtCargo.setText("");
+                txtTelefone.setText("");
+                txtSalario.setText("");
 
-        txtId.requestFocus();
+                montaTabela();
+                containerAbasFuncionario.setSelectedIndex(1);
+                codigo = 0;
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        }
 
-        montaTabela();
+//        Funcionario fun = new Funcionario();
+//
+//        String idString = txtId.getText();
+//        int id = Integer.parseInt(idString);
+//        String idConvertido = String.valueOf(id);
+//
+//        fun.setId(id);
+//        String nome = txtNome.getText();
+//        fun.setNome(nome);
+//        fun.setCargo(txtCargo.getText());
+//        fun.setTelefone(txtTelefone.getText());
+//        fun.setSalario(txtSalario.getText());
+//
+//        cf.salvar(fun);
+//
+//        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+//
+//        txtId.setText("");
+//        txtNome.setText("");
+//        txtCargo.setText("");
+//        txtTelefone.setText("");
+//        txtSalario.setText("");
+//
+//        txtId.requestFocus();
+//
+//        montaTabela();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     //Botão atualizar
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        
+
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+       
+              String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        Funcionario f = cf.recuperar(id);
+
+        if (f == null) {
+            JOptionPane.showMessageDialog(null, "Registro não localizado!");
+        } else {
+            // preenche a variavel codigo que sera usada para salvar ou editar
+            codigo = f.getId();
+
+            // mudar a aba ativa para Cadastro
+            containerAbasFuncionario.setSelectedIndex(0);
+
+            // coloca dados nos campos de interface
+            txtNome.setText(f.getNome());
+            txtCargo.setText(f.getCargo());
+            txtTelefone.setText(f.getTelefone());
+            txtSalario.setText(f.getSalario());
+            
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        
+              String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        boolean retorno = cf.excluir(id);
+        if (retorno) {
+            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
+            montaTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir!");
+        }
+
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
-    private javax.swing.JTabbedPane abaListagem;
+    private javax.swing.JPanel abaListagem;
     private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTabbedPane containerAbasFuncionario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCargo;
-    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSalario;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTable tblFuncionarios;
     private javax.swing.JTextField txtCargo;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSalario;
     private javax.swing.JTextField txtTelefone;

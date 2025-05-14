@@ -15,13 +15,13 @@ import java.util.ArrayList;
  * @author matheus.kunz
  */
 public class ProdutoDAO {
-    
-      ResultSet resultadoQ = null;
+
+    ResultSet resultadoQ = null;
 
     public void salvar(Produto p) throws SQLException {
         String sql = ""
-                + "INSERT INTO produto (descricao, preco, tipo, estoque, tempo_estimado) VALUES ("
-                + "'" + p.getDescricao()+ "',"
+                + "INSERT INTO produto (descricao, preco, tipo, estoque, tempoEstimado) VALUES ("
+                + "'" + p.getDescricao() + "',"
                 + "'" + p.getPreco() + "',"
                 + "'" + p.getTipo() + "',"
                 + "'" + p.getEstoque() + "',"
@@ -31,6 +31,43 @@ public class ProdutoDAO {
         System.out.println("sql: " + sql);
 
         ConexaoBD.executeUpdate(sql);
+    }
+
+    public Produto recuperar(int id) throws SQLException {
+        Produto produto = null;
+        String sql = ""
+                + "SELECT * FROM produto WHERE id = " + id;
+
+        resultadoQ = ConexaoBD.executeQuery(sql);
+
+        if (resultadoQ.next()) {
+            produto = new Produto();
+
+            produto.setId(resultadoQ.getInt("id"));
+            produto.setDescricao(resultadoQ.getString("descricao"));
+            produto.setPreco(resultadoQ.getString("preco"));
+            produto.setTipo(resultadoQ.getString("tipo"));
+            produto.setEstoque(resultadoQ.getInt("estoque"));
+            produto.setTempoEstimado(resultadoQ.getInt("tempoEstimado"));
+        }
+        return produto;
+    }
+
+    public void editar(Produto p) throws SQLException {
+        String sql = ""
+                + "UPDATE produto "
+                + "SET "
+                + "descricao = '" + p.getDescricao() + "',"
+                + "preco = '" + p.getPreco() + "',"
+                + "tipo = '" + p.getTipo() + "',"
+                + "estoque = '" + p.getEstoque() + "',"
+                + "tempoEstimado = '" + p.getTempoEstimado() + "' "
+                + "WHERE id = " + p.getId();
+
+        System.out.println("sql: " + sql);
+
+        ConexaoBD.executeUpdate(sql);
+
     }
 
     public ArrayList<Produto> recuperarTodos() throws SQLException {
@@ -49,12 +86,21 @@ public class ProdutoDAO {
             produto.setPreco(resultadoQ.getString("preco"));
             produto.setTipo(resultadoQ.getString("tipo"));
             produto.setEstoque(resultadoQ.getInt("estoque"));
-            produto.setTempoEstimado(resultadoQ.getInt("tempo_estimado"));
+            produto.setTempoEstimado(resultadoQ.getInt("tempoEstimado"));
 
             produtos.add(produto);
         }
 
         return produtos;
-    
+
+    }
+
+    public void excluir(int id) throws SQLException {
+        String sql = ""
+                + "DELETE FROM produto WHERE id = " + id;
+
+        System.out.println("sql: " + sql);
+
+        ConexaoBD.executeUpdate(sql);
     }
 }

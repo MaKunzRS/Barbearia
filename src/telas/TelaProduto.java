@@ -18,13 +18,14 @@ import javax.swing.table.AbstractTableModel;
 public class TelaProduto extends javax.swing.JInternalFrame {
 
     ControlaProduto cp = new ControlaProduto();
+    int codigo = 0;
 
     public TelaProduto() {
         initComponents();
         montaTabela();
     }
 
-  private void montaTabela() {
+    private void montaTabela() {
         ArrayList<Produto> produtos = cp.recuperarTodos();
         if (produtos == null) {
             JOptionPane.showMessageDialog(null, "Erro ao consultar clientes");
@@ -91,14 +92,13 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             tblProdutos.getColumnModel().getColumn(0).setMaxWidth(20);
         }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         containerAbasProduto = new javax.swing.JTabbedPane();
         abaCadastro = new javax.swing.JPanel();
-        lblId = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
         lblDescricao = new javax.swing.JLabel();
         txtDescricao = new javax.swing.JTextField();
         lblPreco = new javax.swing.JLabel();
@@ -106,18 +106,18 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         lblTempoEstimado = new javax.swing.JLabel();
         txtTempoEstimado = new javax.swing.JTextField();
         lblTipo = new javax.swing.JLabel();
-        txtTipo = new javax.swing.JTextField();
         lblEstoque = new javax.swing.JLabel();
         txtEstoque = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
+        cbTipo = new javax.swing.JComboBox<>();
         abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProdutos = new javax.swing.JTable();
         btnAtualizar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
-
-        lblId.setText("Id");
 
         lblDescricao.setText("Descrição");
 
@@ -126,12 +126,6 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         lblTempoEstimado.setText("Tempo Estimado");
 
         lblTipo.setText("Tipo");
-
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
-            }
-        });
 
         lblEstoque.setText("Estoque");
 
@@ -142,39 +136,42 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Produto", "Serviço" }));
+        cbTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout abaCadastroLayout = new javax.swing.GroupLayout(abaCadastro);
         abaCadastro.setLayout(abaCadastroLayout);
         abaCadastroLayout.setHorizontalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblId)
-                    .addComponent(txtId)
-                    .addComponent(lblDescricao)
-                    .addComponent(txtDescricao)
-                    .addComponent(lblPreco)
-                    .addComponent(txtPreco)
-                    .addComponent(lblTempoEstimado)
-                    .addComponent(txtTempoEstimado)
-                    .addComponent(lblTipo)
-                    .addComponent(txtTipo)
-                    .addComponent(lblEstoque)
-                    .addComponent(txtEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-                .addContainerGap(207, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar)
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSalvar))
+                    .addGroup(abaCadastroLayout.createSequentialGroup()
+                        .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblDescricao)
+                            .addComponent(txtDescricao)
+                            .addComponent(lblPreco)
+                            .addComponent(txtPreco)
+                            .addComponent(lblTempoEstimado)
+                            .addComponent(txtTempoEstimado)
+                            .addComponent(lblTipo)
+                            .addComponent(lblEstoque)
+                            .addComponent(txtEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(cbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 201, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblId)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
                 .addComponent(lblDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,7 +186,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEstoque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,13 +218,32 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout abaListagemLayout = new javax.swing.GroupLayout(abaListagem);
         abaListagem.setLayout(abaListagemLayout);
         abaListagemLayout.setHorizontalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
                 .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAtualizar)
+                    .addGroup(abaListagemLayout.createSequentialGroup()
+                        .addComponent(btnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAtualizar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 4, Short.MAX_VALUE))
         );
@@ -236,7 +252,10 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             .addGroup(abaListagemLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAtualizar)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtualizar)
+                    .addComponent(btnEditar)
+                    .addComponent(btnExcluir))
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
@@ -246,7 +265,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(containerAbasProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(containerAbasProduto)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,77 +277,129 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
-
     //Botão de salvar
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         Produto pr = new Produto();
 
-        String idString = txtId.getText();
-        int id = Integer.parseInt(idString);
-        String idConvertido = String.valueOf(id);
-
-        pr.setId(id);
-
-        pr.setDescricao(txtDescricao.getText());
+        String descricao = txtDescricao.getText();
+        pr.setDescricao(descricao);
         pr.setPreco(txtPreco.getText());
-        pr.setTipo(txtTipo.getText());
+        pr.setEstoque(Integer.parseInt(txtEstoque.getText()));
+        pr.setTipo(cbTipo.getSelectedItem().toString());
+        pr.setTempoEstimado(Integer.parseInt(txtTempoEstimado.getText()));
 
-        String tempoEstimadoString = txtTempoEstimado.getText();
-        int tempoEstimado = Integer.parseInt(tempoEstimadoString);
-        String tempoEstimadoConvertido = String.valueOf(tempoEstimado);
+        if (codigo == 0) {
+            boolean retorno = cp.salvar(pr);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
 
-        pr.setTempoEstimado(tempoEstimado);
+                txtDescricao.setText("");
+                txtEstoque.setText("");
+                txtPreco.setText("");
+                txtTempoEstimado.setText("");
+                cbTipo.setSelectedItem("");
 
-        String estoqueString = txtEstoque.getText();
-        int estoque = Integer.parseInt(estoqueString);
-        String estoqueConvertido = String.valueOf(estoque);
+                txtDescricao.requestFocus();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        } else {
+            pr.setId(codigo);
+            boolean retorno = cp.editar(pr);
+            if (retorno) {
+                JOptionPane.showMessageDialog(null, "Editado com sucesso");
+                txtDescricao.setText("");
+                txtEstoque.setText("");
+                txtPreco.setText("");
+                txtTempoEstimado.setText("");
+                cbTipo.setSelectedItem("");
 
-        pr.setEstoque(estoque);
-
-        cp.salvar(pr);
-
-        JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-
-        txtId.setText("");
-        txtDescricao.setText("");
-        txtPreco.setText("");
-        txtTipo.setText("");
-        txtTempoEstimado.setText("");
-        txtEstoque.setText("");
-
-        txtId.requestFocus();
-
-        montaTabela();
+                montaTabela();
+                containerAbasProduto.setSelectedIndex(1);
+                codigo = 0;
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
+            }
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
     //Botão atualizar
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+
+        String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        Produto p = cp.recuperar(id);
+
+        if (p == null) {
+            JOptionPane.showMessageDialog(null, "Registro não localizado!");
+        } else {
+            // preenche a variavel codigo que sera usada para salvar ou editar
+            codigo = p.getId();
+
+            // mudar a aba ativa para Cadastro
+            containerAbasProduto.setSelectedIndex(0);
+
+            // coloca dados nos campos de interface
+            txtDescricao.setText(p.getDescricao());
+            txtPreco.setText(p.getPreco());
+            txtEstoque.setText(String.valueOf(p.getEstoque()));
+            txtTempoEstimado.setText(String.valueOf(p.getTempoEstimado()));
+
+            txtDescricao.requestFocus();
+        }
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+
+        String idString = String.valueOf(tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        boolean retorno = cp.excluir(id);
+        if (retorno) {
+            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
+            montaTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir!");
+        }
+
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void cbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoActionPerformed
+        if (cbTipo.getSelectedItem() == "Serviço"){
+            txtEstoque.setEnabled(false);
+            txtTempoEstimado.setEnabled(true);
+        } else if (cbTipo.getSelectedItem() == "Produto"){
+             txtEstoque.setEnabled(true);
+            txtTempoEstimado.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbTipoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
     private javax.swing.JPanel abaListagem;
     private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> cbTipo;
     private javax.swing.JTabbedPane containerAbasProduto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblEstoque;
-    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblPreco;
     private javax.swing.JLabel lblTempoEstimado;
     private javax.swing.JLabel lblTipo;
     private javax.swing.JTable tblProdutos;
     private javax.swing.JTextField txtDescricao;
     private javax.swing.JTextField txtEstoque;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtPreco;
     private javax.swing.JTextField txtTempoEstimado;
-    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

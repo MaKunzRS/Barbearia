@@ -32,7 +32,7 @@ public class ControlaCliente {
             clienteDAO.editar(c);
             return true;
         } catch (SQLException ex) {
-            System.out.println("Erro ao esitar cliente: " + ex.getMessage());
+            System.out.println("Erro ao editar cliente: " + ex.getMessage());
             return false;
         }
     }
