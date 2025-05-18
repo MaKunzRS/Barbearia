@@ -118,7 +118,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        lblNome.setText("Nome");
+        lblNome.setText("Nome*");
 
         lblDataNasc.setText("Data de Nascimento");
 
@@ -126,14 +126,16 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         lblEmail.setText("Email");
 
+        btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
         btnSalvar.setText("Salvar");
+        btnSalvar.setToolTipText("");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
             }
         });
 
-        lblCpf.setText("CPF");
+        lblCpf.setText("CPF*");
 
         javax.swing.GroupLayout abaCadastroLayout = new javax.swing.GroupLayout(abaCadastro);
         abaCadastro.setLayout(abaCadastroLayout);
@@ -141,40 +143,36 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblNome)
-                        .addComponent(lblDataNasc)
-                        .addComponent(lblTelefone)
-                        .addComponent(lblEmail)
-                        .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                        .addComponent(txtDataNasc)
-                        .addComponent(txtEmail)
-                        .addComponent(lblCpf)
-                        .addComponent(txtCpf))
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(393, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar)
-                .addGap(16, 16, 16))
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNome)
+                    .addComponent(lblDataNasc)
+                    .addComponent(lblTelefone)
+                    .addComponent(lblEmail)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                    .addComponent(lblCpf)
+                    .addComponent(txtCpf)
+                    .addComponent(txtDataNasc)
+                    .addComponent(txtTelefone)
+                    .addComponent(txtNome))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap()
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCpf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDataNasc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTelefone)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,9 +180,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 .addComponent(lblEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(btnSalvar)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         containerAbasCliente.addTab("Cadastro", abaCadastro);
@@ -202,6 +200,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblClientes);
 
+        btnAtualiza.setBackground(new java.awt.Color(204, 204, 204));
         btnAtualiza.setText("Atualizar");
         btnAtualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +208,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,6 +216,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setBackground(new java.awt.Color(204, 204, 204));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,28 +229,26 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         abaListagemLayout.setHorizontalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
-                .addGap(20, 20, 20)
-                .addComponent(btnExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAtualiza)
-                    .addComponent(btnEditar))
-                .addGap(16, 16, 16))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAtualiza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         abaListagemLayout.setVerticalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaListagemLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEditar)
+                .addComponent(btnAtualiza)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtualiza)
-                    .addComponent(btnExcluir))
+                    .addComponent(btnExcluir)
+                    .addComponent(btnEditar))
                 .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
         );
 
         containerAbasCliente.addTab("Listagem", abaListagem);
@@ -258,11 +257,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(containerAbasCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+            .addComponent(containerAbasCliente)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(containerAbasCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(containerAbasCliente)
         );
 
         pack();

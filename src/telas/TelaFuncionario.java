@@ -113,14 +113,15 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        lblNome.setText("Nome");
+        lblNome.setText("Nome*");
 
-        lblCargo.setText("Cargo");
+        lblCargo.setText("Cargo*");
 
         lblTelefone.setText("Telefone");
 
-        lblSalario.setText("Salario");
+        lblSalario.setText("Salario*");
 
+        btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,27 +135,22 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
-                        .addGap(0, 408, Short.MAX_VALUE)
-                        .addComponent(btnSalvar))
-                    .addGroup(abaCadastroLayout.createSequentialGroup()
-                        .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNome)
-                            .addComponent(txtNome)
-                            .addComponent(lblCargo)
-                            .addComponent(lblTelefone)
-                            .addComponent(txtTelefone)
-                            .addComponent(lblSalario)
-                            .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(txtCargo))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNome)
+                    .addComponent(lblCargo)
+                    .addComponent(lblTelefone)
+                    .addComponent(lblSalario)
+                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                    .addComponent(txtSalario)
+                    .addComponent(txtNome)
+                    .addComponent(txtCargo))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap()
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,9 +166,9 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                 .addComponent(lblSalario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSalvar)
-                .addContainerGap())
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         containerAbasFuncionario.addTab("Cadastro", abaCadastro);
@@ -190,6 +186,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblFuncionarios);
 
+        btnAtualizar.setBackground(new java.awt.Color(204, 204, 204));
         btnAtualizar.setText("Atualizar");
         btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +194,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setBackground(new java.awt.Color(204, 204, 204));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,6 +202,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
+        btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,33 +215,28 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         abaListagemLayout.setHorizontalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaListagemLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAtualizar)))
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnExcluir)
+                .addGap(0, 9, Short.MAX_VALUE))
         );
         abaListagemLayout.setVerticalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(abaListagemLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 11, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAtualizar)
-                .addContainerGap())
+                        .addComponent(btnAtualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEditar)
+                            .addComponent(btnExcluir)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         containerAbasFuncionario.addTab("Listagem", abaListagem);
@@ -332,15 +326,23 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
 //        montaTabela();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
-    //Botão atualizar
-    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
-        montaTabela();
-    }//GEN-LAST:event_btnAtualizarActionPerformed
+        String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        boolean retorno = cf.excluir(id);
+        if (retorno) {
+            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
+            montaTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir!");
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-       
-              String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
+
+        String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
 
         Funcionario f = cf.recuperar(id);
@@ -359,25 +361,16 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
             txtCargo.setText(f.getCargo());
             txtTelefone.setText(f.getTelefone());
             txtSalario.setText(f.getSalario());
-            
+
             txtNome.requestFocus();
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
-              String idString = String.valueOf(tblFuncionarios.getValueAt(tblFuncionarios.getSelectedRow(), 0));
-        int id = Integer.parseInt(idString);
+    //Botão atualizar
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
 
-        boolean retorno = cf.excluir(id);
-        if (retorno) {
-            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
-            montaTabela();
-        } else {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir!");
-        }
-
-    }//GEN-LAST:event_btnExcluirActionPerformed
+        montaTabela();
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

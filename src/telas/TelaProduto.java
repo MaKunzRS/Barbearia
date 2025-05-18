@@ -119,16 +119,17 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        lblDescricao.setText("Descrição");
+        lblDescricao.setText("Descrição*");
 
-        lblPreco.setText("Preço");
+        lblPreco.setText("Preço*");
 
         lblTempoEstimado.setText("Tempo Estimado");
 
-        lblTipo.setText("Tipo");
+        lblTipo.setText("Tipo*");
 
         lblEstoque.setText("Estoque");
 
+        btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,51 +150,47 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaCadastroLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSalvar))
-                    .addGroup(abaCadastroLayout.createSequentialGroup()
-                        .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblDescricao)
-                            .addComponent(txtDescricao)
-                            .addComponent(lblPreco)
-                            .addComponent(txtPreco)
-                            .addComponent(lblTempoEstimado)
-                            .addComponent(txtTempoEstimado)
-                            .addComponent(lblTipo)
-                            .addComponent(lblEstoque)
-                            .addComponent(txtEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(cbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 201, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSalvar)
+                    .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblDescricao)
+                        .addComponent(lblPreco)
+                        .addComponent(lblTempoEstimado)
+                        .addComponent(lblTipo)
+                        .addComponent(lblEstoque)
+                        .addComponent(txtDescricao)
+                        .addComponent(txtPreco)
+                        .addComponent(cbTipo, 0, 280, Short.MAX_VALUE)
+                        .addComponent(txtTempoEstimado)
+                        .addComponent(txtEstoque)))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(14, 14, 14)
                 .addComponent(lblDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPreco)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTipo)
+                .addGap(3, 3, 3)
+                .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTempoEstimado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTempoEstimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTipo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEstoque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalvar)
-                .addContainerGap())
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         containerAbasProduto.addTab("Cadastro", abaCadastro);
@@ -211,6 +208,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblProdutos);
 
+        btnAtualizar.setBackground(new java.awt.Color(204, 204, 204));
         btnAtualizar.setText("Atualizar");
         btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +216,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setBackground(new java.awt.Color(204, 204, 204));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +224,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,26 +237,29 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         abaListagemLayout.setHorizontalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(abaListagemLayout.createSequentialGroup()
-                        .addComponent(btnExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAtualizar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 4, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         abaListagemLayout.setVerticalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaListagemLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtualizar)
-                    .addComponent(btnEditar)
-                    .addComponent(btnExcluir))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaListagemLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAtualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnExcluir)
+                            .addComponent(btnEditar)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         containerAbasProduto.addTab("Listagem", abaListagem);
@@ -271,7 +274,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(containerAbasProduto)
-                .addGap(42, 42, 42))
+                .addContainerGap())
         );
 
         pack();
