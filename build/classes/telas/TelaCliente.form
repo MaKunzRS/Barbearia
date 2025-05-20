@@ -22,12 +22,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="containerAbasCliente" alignment="0" pref="565" max="32767" attributes="0"/>
+          <Component id="containerAbasCliente" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="containerAbasCliente" alignment="0" pref="460" max="32767" attributes="0"/>
+          <Component id="containerAbasCliente" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,47 +48,41 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDataNasc" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNome" alignment="0" pref="166" max="32767" attributes="0"/>
-                              <Component id="txtDataNasc" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblCpf" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCpf" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="txtTelefone" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSalvar" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDataNasc" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEmail" alignment="0" pref="280" max="32767" attributes="0"/>
+                          <Component id="lblCpf" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCpf" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtDataNasc" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtTelefone" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="393" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace pref="300" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblNome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtNome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblCpf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
-                      <Component id="txtCpf" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtCpf" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblDataNasc" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtDataNasc" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblTelefone" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtTelefone" min="-2" max="-2" attributes="0"/>
@@ -96,9 +90,9 @@
                       <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnSalvar" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace pref="102" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -106,7 +100,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblNome">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nome"/>
+                <Property name="text" type="java.lang.String" value="Nome*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNome">
@@ -134,7 +128,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSalvar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
@@ -142,7 +140,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCpf">
               <Properties>
-                <Property name="text" type="java.lang.String" value="CPF"/>
+                <Property name="text" type="java.lang.String" value="CPF*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCpf">
@@ -162,34 +160,31 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" pref="369" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnAtualiza" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="404" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnEditar" max="32767" attributes="0"/>
+                          <Component id="btnAtualiza" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnExcluir" min="-2" pref="76" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="402" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAtualiza" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAtualiza" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane1" alignment="0" pref="405" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -244,6 +239,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnAtualiza">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Atualizar"/>
               </Properties>
               <Events>
@@ -252,6 +250,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnExcluir">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Excluir"/>
               </Properties>
               <Events>
@@ -260,6 +261,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnEditar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>

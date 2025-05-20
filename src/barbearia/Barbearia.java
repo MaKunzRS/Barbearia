@@ -18,8 +18,8 @@ public class Barbearia {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Inicia tela principal
 
+//Inicia tela principal
         try {
             ConexaoBD.getInstance().getConnection();
             TelaPrincipal tp = new TelaPrincipal();

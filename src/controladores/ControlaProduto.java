@@ -17,6 +17,7 @@ public class ControlaProduto {
 
     ProdutoDAO produtoDAO = new ProdutoDAO();
 
+//Método para salvar produto
     public boolean salvar(Produto p) {
         try {
             produtoDAO.salvar(p);
@@ -27,6 +28,7 @@ public class ControlaProduto {
         }
     }
 
+//Método para editar produto
     public boolean editar(Produto p) {
         try {
             produtoDAO.editar(p);
@@ -36,7 +38,8 @@ public class ControlaProduto {
             return false;
         }
     }
-    
+ 
+//Método para excluir produto    
      public boolean excluir(int id) {
         try {
             produtoDAO.excluir(id);
@@ -47,6 +50,7 @@ public class ControlaProduto {
         }
     }
 
+//Método para recuperar um produto
     public Produto recuperar(int id) {
         try {
             Produto produto = produtoDAO.recuperar(id);
@@ -57,6 +61,7 @@ public class ControlaProduto {
         }
     }
 
+//Método para recuperar todos os produtos    
     public ArrayList<Produto> recuperarTodos() {
 
         ArrayList<Produto> vetorProdutos = null;

@@ -17,6 +17,7 @@ public class ControlaFuncionario {
 
     FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
+//Método para salvar funcionário
     public boolean salvar(Funcionario f) {
         try {
             funcionarioDAO.salvar(f);
@@ -27,6 +28,7 @@ public class ControlaFuncionario {
         }
     }
 
+//Método para editar funcionário
     public boolean editar(Funcionario f) {
         try {
             funcionarioDAO.editar(f);
@@ -36,8 +38,9 @@ public class ControlaFuncionario {
             return false;
         }
     }
-    
-     public boolean excluir(int id) {
+
+//Método para excluir funcionário    
+    public boolean excluir(int id) {
         try {
             funcionarioDAO.excluir(id);
             return true;
@@ -46,8 +49,9 @@ public class ControlaFuncionario {
             return false;
         }
     }
-     
-      public Funcionario recuperar(int id) {
+
+//Método para recuperar um funcionário    
+    public Funcionario recuperar(int id) {
         try {
             Funcionario funcionario = funcionarioDAO.recuperar(id);
             return funcionario;
@@ -57,6 +61,7 @@ public class ControlaFuncionario {
         }
     }
 
+//Método para recuperar todos os funcionários
     public ArrayList<Funcionario> recuperarTodos() {
         ArrayList<Funcionario> vetorFuncionarios = null;
         try {

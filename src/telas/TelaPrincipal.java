@@ -15,7 +15,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
-        
+
     }
 
     /**
@@ -36,15 +36,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        dskPainel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout dskPainelLayout = new javax.swing.GroupLayout(dskPainel);
         dskPainel.setLayout(dskPainelLayout);
         dskPainelLayout.setHorizontalGroup(
             dskPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 396, Short.MAX_VALUE)
         );
         dskPainelLayout.setVerticalGroup(
             dskPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 273, Short.MAX_VALUE)
         );
 
         mnCadastros.setText("Cadastros");
@@ -91,20 +93,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        //Inicia tela cliente
+//Inicia tela cliente
     private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
         TelaCliente tc = new TelaCliente();
         dskPainel.add(tc);
         tc.setVisible(true);
     }//GEN-LAST:event_mnClientesActionPerformed
-        //Inicia tela funcionario
+
+//Inicia tela funcionario
     private void mnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFuncionariosActionPerformed
         TelaFuncionario tf = new TelaFuncionario();
         dskPainel.add(tf);
         tf.setVisible(true);
     }//GEN-LAST:event_mnFuncionariosActionPerformed
 
-    //Inicia tela produto
+//Inicia tela produto
     private void mnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProdutosActionPerformed
         TelaProduto tp = new TelaProduto();
         dskPainel.add(tp);
@@ -115,9 +118,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-       
-        
+
+//Inicia a tela principal
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);

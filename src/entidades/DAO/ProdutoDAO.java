@@ -18,6 +18,7 @@ public class ProdutoDAO {
 
     ResultSet resultadoQ = null;
 
+//Método para salvar no BD
     public void salvar(Produto p) throws SQLException {
         String sql = ""
                 + "INSERT INTO produto (descricao, preco, tipo, estoque, tempoEstimado) VALUES ("
@@ -33,6 +34,7 @@ public class ProdutoDAO {
         ConexaoBD.executeUpdate(sql);
     }
 
+//Método para consultar no BD
     public Produto recuperar(int id) throws SQLException {
         Produto produto = null;
         String sql = ""
@@ -53,6 +55,7 @@ public class ProdutoDAO {
         return produto;
     }
 
+//Método para editar no BD
     public void editar(Produto p) throws SQLException {
         String sql = ""
                 + "UPDATE produto "
@@ -70,6 +73,7 @@ public class ProdutoDAO {
 
     }
 
+//Método para consultar todos no BD
     public ArrayList<Produto> recuperarTodos() throws SQLException {
         ArrayList<Produto> produtos = new ArrayList();
 
@@ -95,6 +99,7 @@ public class ProdutoDAO {
 
     }
 
+//Método para excluir no BD
     public void excluir(int id) throws SQLException {
         String sql = ""
                 + "DELETE FROM produto WHERE id = " + id;

@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class ClienteDAO {
     
     ResultSet resultadoQ = null;
-    
+ 
+//Método para salvar no BD
     public void salvar(Cliente c) throws SQLException {
         String sql = ""
                 + "INSERT INTO cliente (nome, cpf, telefone, email, data_nasc) VALUES ("
@@ -32,7 +33,8 @@ public class ClienteDAO {
         
         ConexaoBD.executeUpdate(sql);
     }
-    
+ 
+//Método para consultar todos no BD
     public ArrayList<Cliente> recuperarTodos() throws SQLException {
         ArrayList<Cliente> clientes = new ArrayList();
         
@@ -57,7 +59,8 @@ public class ClienteDAO {
         return clientes;
         
     }
-    
+
+//Método para conultar todos no BD    
     public Cliente recuperar(int id) throws SQLException {
         Cliente cliente = null;
         String sql = ""
@@ -77,7 +80,8 @@ public class ClienteDAO {
         }
         return cliente;
     }
-    
+
+//Método para editar no BD
     public void editar(Cliente c) throws SQLException {
         String sql = ""
                 + "UPDATE cliente "
@@ -95,6 +99,7 @@ public class ClienteDAO {
         
     }
     
+//Método para excluir no BD
     public void excluir(int id) throws SQLException{
         String sql = ""
                 + "DELETE FROM cliente WHERE id = " + id;
