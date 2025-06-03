@@ -3,22 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/controladores/ControlaProduto.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/entidades/DAO/FuncionarioDAO.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/entidades/DAO/ProdutoDAO.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/entidades/Produto.java</file>
             <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/controladores/ControlaFuncionario.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaFuncionario.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaProduto.java</file>
-=======
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/telas/TelaCliente.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/telas/TelaFuncionario.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/telas/TelaPrincipal.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/telas/TelaProduto.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/controladores/ControlaCliente.java</file>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/Barbearia/src/entidades/DAO/ClienteDAO.java</file>
->>>>>>> 43d366f3ed513470db86e54389d0a1c5e49d89f7
         </group>
     </open-files>
 </project-private>
