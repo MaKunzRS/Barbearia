@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/controladores/ControlaFuncionario.java</file>
+            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/entidades/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaLogin.java</file>
+            <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/controladores/ControlaUsuario.java</file>
         </group>
     </open-files>
 </project-private>
