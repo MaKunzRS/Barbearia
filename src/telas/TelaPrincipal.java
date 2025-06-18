@@ -37,6 +37,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnFuncionarios = new javax.swing.JMenuItem();
         mnProdutos = new javax.swing.JMenuItem();
         mnUsuarios = new javax.swing.JMenuItem();
+        mnRelatorios = new javax.swing.JMenu();
+        mnRelClientes = new javax.swing.JMenuItem();
+        mnRelFuncionarios = new javax.swing.JMenuItem();
+        mnRelProdutos = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -91,6 +95,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         mnBarra.add(mnCadastros);
 
+        mnRelatorios.setText("Relatórios");
+
+        mnRelClientes.setText("Clientes");
+        mnRelClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelClientesActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelClientes);
+
+        mnRelFuncionarios.setText("Funcionários");
+        mnRelFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelFuncionariosActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelFuncionarios);
+
+        mnRelProdutos.setText("Produtos");
+        mnRelProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelProdutosActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelProdutos);
+
+        mnBarra.add(mnRelatorios);
+
         setJMenuBar(mnBarra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,6 +164,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnCadastrosActionPerformed
 
+    private void mnRelClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelClientesActionPerformed
+        TelaPDFClientes tpc = new TelaPDFClientes();
+        dskPainel.add(tpc);
+        tpc.setVisible(true);
+    }//GEN-LAST:event_mnRelClientesActionPerformed
+
+    private void mnRelFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelFuncionariosActionPerformed
+        TelaPDFFuncionarios tpf = new TelaPDFFuncionarios();
+        dskPainel.add(tpf);
+        tpf.setVisible(true);
+    }//GEN-LAST:event_mnRelFuncionariosActionPerformed
+
+    private void mnRelProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelProdutosActionPerformed
+        TelaPDFProdutos tpp = new TelaPDFProdutos();
+        dskPainel.add(tpp);
+        tpp.setVisible(true);
+    }//GEN-LAST:event_mnRelProdutosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -153,6 +203,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnClientes;
     private javax.swing.JMenuItem mnFuncionarios;
     private javax.swing.JMenuItem mnProdutos;
+    private javax.swing.JMenuItem mnRelClientes;
+    private javax.swing.JMenuItem mnRelFuncionarios;
+    private javax.swing.JMenuItem mnRelProdutos;
+    private javax.swing.JMenu mnRelatorios;
     private javax.swing.JMenuItem mnUsuarios;
     // End of variables declaration//GEN-END:variables
 }

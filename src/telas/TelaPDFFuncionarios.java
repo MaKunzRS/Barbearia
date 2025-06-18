@@ -6,6 +6,7 @@ package telas;
 
 import apoio.PDFManager;
 import controladores.ControlaCliente;
+import controladores.ControlaFuncionario;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -15,16 +16,17 @@ import javax.swing.JOptionPane;
  *
  * @author mateus
  */
-public class TelaPDFClientes extends javax.swing.JInternalFrame {
+public class TelaPDFFuncionarios extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaPDF
      */
-    public TelaPDFClientes() {
+    public TelaPDFFuncionarios() {
         initComponents();
     }
 
     ControlaCliente cc = new ControlaCliente();
+    ControlaFuncionario cf = new ControlaFuncionario();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,7 +95,7 @@ public class TelaPDFClientes extends javax.swing.JInternalFrame {
         int resultado = chooser.showOpenDialog(this);
         if (resultado == JFileChooser.APPROVE_OPTION) {
             File dir = chooser.getSelectedFile();
-            txtCaminho.setText(dir.getAbsolutePath() + "/clientes.pdf");
+            txtCaminho.setText(dir.getAbsolutePath() + "/funcionarios.pdf");
         }
     }//GEN-LAST:event_btnCaminhoActionPerformed
 
@@ -104,16 +106,16 @@ public class TelaPDFClientes extends javax.swing.JInternalFrame {
         } else {
             try {
                 String[] ordem = {
-                    "id", "nome", "cpf", "dataNascimento", "telefone", "email"
+                    "id", "nome", "cargo", "telefone", "salario"
                 };
                 String[] rotulos = {
-                    "ID", "Nome", "CPF", "Data Nascimento", "Telefone", "Email"
+                    "ID", "Nome", "Cargo", "Telefone", "Salário"
                 };
 
-                int[] larguras = {4, 16, 11, 16, 11, 16};
+                int[] larguras = {4, 16, 11, 11, 11,};
 
-                PDFManager.gerar(cc.recuperarTodos(), caminho, ordem, larguras, rotulos);
-                JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome clientes.pdf");
+                PDFManager.gerar(cf.recuperarTodos(), caminho, ordem, larguras, rotulos);
+                JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome funcionarios.pdf");
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro ao gerar o PDF");
                 System.err.println("Ocorreu um erro ao gerar o PDF: " + ex);
