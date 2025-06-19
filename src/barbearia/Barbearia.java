@@ -6,6 +6,7 @@ package barbearia;
 
 import apoio.ConexaoBD;
 import javax.swing.JOptionPane;
+import telas.TelaLogin;
 import telas.TelaPrincipal;
 
 /**
@@ -22,8 +23,9 @@ public class Barbearia {
 //Inicia tela principal
         try {
             ConexaoBD.getInstance().getConnection();
-            TelaPrincipal tp = new TelaPrincipal();
-            tp.setVisible(true);
+            TelaLogin tl = new TelaLogin();
+            tl.setVisible(true);
+           
         } catch (Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Erro de conexão com o banco de dados!\nPor favor entre em contato com o suporte.");

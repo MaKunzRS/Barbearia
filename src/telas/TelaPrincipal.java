@@ -4,6 +4,8 @@
  */
 package telas;
 
+import entidades.Usuario;
+
 /**
  *
  * @author matheus.kunz
@@ -27,12 +29,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         dskPainel = new javax.swing.JDesktopPane();
         mnBarra = new javax.swing.JMenuBar();
         mnCadastros = new javax.swing.JMenu();
         mnClientes = new javax.swing.JMenuItem();
         mnFuncionarios = new javax.swing.JMenuItem();
         mnProdutos = new javax.swing.JMenuItem();
+        mnUsuarios = new javax.swing.JMenuItem();
+        mnRelatorios = new javax.swing.JMenu();
+        mnRelClientes = new javax.swing.JMenuItem();
+        mnRelFuncionarios = new javax.swing.JMenuItem();
+        mnRelProdutos = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +60,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         mnCadastros.setText("Cadastros");
+        mnCadastros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCadastrosActionPerformed(evt);
+            }
+        });
 
         mnClientes.setText("Clientes");
         mnClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +90,38 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         mnCadastros.add(mnProdutos);
 
+        mnUsuarios.setText("Usuarios");
+        mnCadastros.add(mnUsuarios);
+
         mnBarra.add(mnCadastros);
+
+        mnRelatorios.setText("Relatórios");
+
+        mnRelClientes.setText("Clientes");
+        mnRelClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelClientesActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelClientes);
+
+        mnRelFuncionarios.setText("Funcionários");
+        mnRelFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelFuncionariosActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelFuncionarios);
+
+        mnRelProdutos.setText("Produtos");
+        mnRelProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRelProdutosActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(mnRelProdutos);
+
+        mnBarra.add(mnRelatorios);
 
         setJMenuBar(mnBarra);
 
@@ -114,6 +160,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tp.setVisible(true);
     }//GEN-LAST:event_mnProdutosActionPerformed
 
+    private void mnCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadastrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnCadastrosActionPerformed
+
+    private void mnRelClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelClientesActionPerformed
+        TelaPDFClientes tpc = new TelaPDFClientes();
+        dskPainel.add(tpc);
+        tpc.setVisible(true);
+    }//GEN-LAST:event_mnRelClientesActionPerformed
+
+    private void mnRelFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelFuncionariosActionPerformed
+        TelaPDFFuncionarios tpf = new TelaPDFFuncionarios();
+        dskPainel.add(tpf);
+        tpf.setVisible(true);
+    }//GEN-LAST:event_mnRelFuncionariosActionPerformed
+
+    private void mnRelProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRelProdutosActionPerformed
+        TelaPDFProdutos tpp = new TelaPDFProdutos();
+        dskPainel.add(tpp);
+        tpp.setVisible(true);
+    }//GEN-LAST:event_mnRelProdutosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -129,10 +197,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dskPainel;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar mnBarra;
     private javax.swing.JMenu mnCadastros;
     private javax.swing.JMenuItem mnClientes;
     private javax.swing.JMenuItem mnFuncionarios;
     private javax.swing.JMenuItem mnProdutos;
+    private javax.swing.JMenuItem mnRelClientes;
+    private javax.swing.JMenuItem mnRelFuncionarios;
+    private javax.swing.JMenuItem mnRelProdutos;
+    private javax.swing.JMenu mnRelatorios;
+    private javax.swing.JMenuItem mnUsuarios;
     // End of variables declaration//GEN-END:variables
 }
