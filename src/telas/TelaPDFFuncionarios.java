@@ -114,7 +114,7 @@ public class TelaPDFFuncionarios extends javax.swing.JInternalFrame {
 
                 int[] larguras = {4, 16, 11, 11, 11,};
 
-                PDFManager.gerar(cf.recuperarTodos(), caminho, ordem, larguras, rotulos);
+                PDFManager.gerar(cf.recuperarTodos(), caminho/*, ordem, larguras, rotulos*/);
                 JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome funcionarios.pdf");
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro ao gerar o PDF");

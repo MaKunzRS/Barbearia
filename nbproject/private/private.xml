@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaPrincipal.java</file>
             <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/entidades/Produto.java</file>
             <file>file:/C:/Users/matheus.kunz/Documents/GitHub/barbearia/src/telas/TelaPDFProdutos.java</file>
+=======
+            <file>file:/D:/Git/Barbearia/src/telas/TelaPDFClientes.java</file>
+            <file>file:/D:/Git/Barbearia/src/entidades/DAO/ClienteDAO.java</file>
+            <file>file:/D:/Git/Barbearia/src/telas/TelaPDFFuncionarios.java</file>
+            <file>file:/D:/Git/Barbearia/src/telas/TelaPDFProdutos.java</file>
+            <file>file:/D:/Git/Barbearia/src/entidades/DAO/UsuarioDAO.java</file>
+            <file>file:/D:/Git/Barbearia/src/entidades/Usuario.java</file>
+>>>>>>> a1af718646bdd1eacdde882c01e1909a0aeff23f
         </group>
     </open-files>
 </project-private>
