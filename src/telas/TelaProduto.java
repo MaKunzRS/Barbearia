@@ -4,6 +4,7 @@
  */
 package telas;
 
+import apoio.Formatacao;
 import controladores.ControlaProduto;
 import entidades.Cliente;
 import entidades.Produto;
@@ -104,7 +105,6 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         lblDescricao = new javax.swing.JLabel();
         txtDescricao = new javax.swing.JTextField();
         lblPreco = new javax.swing.JLabel();
-        txtPreco = new javax.swing.JTextField();
         lblTempoEstimado = new javax.swing.JLabel();
         txtTempoEstimado = new javax.swing.JTextField();
         lblTipo = new javax.swing.JLabel();
@@ -112,6 +112,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         txtEstoque = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         cbTipo = new javax.swing.JComboBox<>();
+        txtPreco = new javax.swing.JTextField();
         abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProdutos = new javax.swing.JTable();
@@ -152,19 +153,20 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSalvar)
-                    .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblDescricao)
-                        .addComponent(lblPreco)
-                        .addComponent(lblTempoEstimado)
-                        .addComponent(lblTipo)
-                        .addComponent(lblEstoque)
-                        .addComponent(txtDescricao)
-                        .addComponent(txtPreco)
-                        .addComponent(cbTipo, 0, 280, Short.MAX_VALUE)
-                        .addComponent(txtTempoEstimado)
-                        .addComponent(txtEstoque)))
+                .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnSalvar)
+                        .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblDescricao)
+                            .addComponent(lblPreco)
+                            .addComponent(lblTempoEstimado)
+                            .addComponent(lblTipo)
+                            .addComponent(lblEstoque)
+                            .addComponent(txtDescricao)
+                            .addComponent(cbTipo, 0, 280, Short.MAX_VALUE)
+                            .addComponent(txtTempoEstimado)
+                            .addComponent(txtEstoque)))
+                    .addComponent(txtPreco))
                 .addContainerGap(311, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(

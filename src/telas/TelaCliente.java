@@ -4,6 +4,7 @@
  */
 package telas;
 
+import apoio.Formatacao;
 import controladores.ControlaCliente;
 import entidades.Cliente;
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     public TelaCliente() {
         initComponents();
         montaTabela();
+        Formatacao.formatarCpf(txtCpf);
+        Formatacao.formatarData(txtDataNasc);
+        Formatacao.formatarTelefone(txtTelefone);
     }
 
 //Método para montar a tabela de listagem
@@ -103,14 +107,14 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         lblDataNasc = new javax.swing.JLabel();
-        txtDataNasc = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         lblCpf = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JFormattedTextField();
+        txtDataNasc = new javax.swing.JFormattedTextField();
+        txtTelefone = new javax.swing.JFormattedTextField();
         abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
@@ -153,10 +157,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                     .addComponent(lblCpf)
+                    .addComponent(txtNome)
                     .addComponent(txtCpf)
                     .addComponent(txtDataNasc)
-                    .addComponent(txtTelefone)
-                    .addComponent(txtNome))
+                    .addComponent(txtTelefone))
                 .addContainerGap(300, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
@@ -376,10 +380,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTable tblClientes;
-    private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtDataNasc;
+    private javax.swing.JFormattedTextField txtCpf;
+    private javax.swing.JFormattedTextField txtDataNasc;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

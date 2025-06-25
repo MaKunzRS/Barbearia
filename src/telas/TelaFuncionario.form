@@ -48,7 +48,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnSalvar" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -56,10 +56,10 @@
                           <Component id="lblCargo" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSalario" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtTelefone" alignment="0" pref="280" max="32767" attributes="0"/>
-                          <Component id="txtSalario" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtSalario" alignment="0" pref="280" max="32767" attributes="0"/>
                           <Component id="txtNome" max="32767" attributes="0"/>
                           <Component id="txtCargo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtTelefone" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="305" max="32767" attributes="0"/>
                   </Group>
@@ -109,8 +109,6 @@
                 <Property name="text" type="java.lang.String" value="Telefone"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtTelefone">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblSalario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salario*"/>
@@ -130,6 +128,8 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCargo">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
             </Component>
           </SubComponents>
         </Container>

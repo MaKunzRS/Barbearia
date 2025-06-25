@@ -48,7 +48,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnSalvar" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -58,10 +58,10 @@
                           <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtEmail" alignment="0" pref="280" max="32767" attributes="0"/>
                           <Component id="lblCpf" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCpf" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtDataNasc" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtTelefone" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCpf" max="32767" attributes="0"/>
+                          <Component id="txtDataNasc" max="32767" attributes="0"/>
+                          <Component id="txtTelefone" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="300" max="32767" attributes="0"/>
                   </Group>
@@ -110,14 +110,10 @@
                 <Property name="text" type="java.lang.String" value="Data de Nascimento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDataNasc">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblTelefone">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Telefone"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtTelefone">
             </Component>
             <Component class="javax.swing.JLabel" name="lblEmail">
               <Properties>
@@ -143,7 +139,11 @@
                 <Property name="text" type="java.lang.String" value="CPF*"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCpf">
+            <Component class="javax.swing.JFormattedTextField" name="txtCpf">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtDataNasc">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
             </Component>
           </SubComponents>
         </Container>

@@ -24,6 +24,12 @@ public class Cliente {
     public Cliente() {
     }
 
+    @Override
+    public String toString() {
+        return id + ";" + nome + ";" + cpf + ";" + email + ";" + dataNascimento + ";" + telefone;
+
+    }
+
 //Getters e Setters
     public int getId() {
         return id;

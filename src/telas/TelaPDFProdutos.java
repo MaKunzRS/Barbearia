@@ -116,7 +116,7 @@ public class TelaPDFProdutos extends javax.swing.JInternalFrame {
 
                 int[] larguras = {4, 11, 8, 8, 6, 8};
 
-                PDFManager.gerar(cp.recuperarTodos(), caminho/*, ordem, larguras, rotulos*/);
+                PDFManager.gerar(cp.recuperarTodos(), caminho, ordem, larguras, rotulos);
                 JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome produtos.pdf");
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro ao gerar o PDF");

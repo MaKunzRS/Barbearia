@@ -7,6 +7,7 @@ package controladores;
 import entidades.DAO.UsuarioDAO;
 import entidades.Usuario;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -29,6 +30,57 @@ public class ControlaUsuario {
             return false;
         }
     }
-    
-  
+
+    public boolean salvar(Usuario u) {
+        try {
+            usuarioDAO.salvar(u);
+            return true;
+        } catch (Exception ex) {
+            System.out.println("Erro ao salvar usuário: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public boolean editar(Usuario u) {
+        try {
+            usuarioDAO.editar(u);
+            return true;
+        } catch (Exception ex) {
+            System.out.println("Erro ao editar usuário: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public boolean excluir(int id) {
+        try {
+            usuarioDAO.excluir(id);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao excluir usuário: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    public Usuario recuperar(int id) {
+        try {
+            Usuario usuario = usuarioDAO.recuperar(id);
+            return usuario;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar usuário: " + ex.getMessage());
+            return null;
+        }
+    }
+
+    public ArrayList<Usuario> recuperarTodos() {
+
+        ArrayList<Usuario> vetorUsuarios = null;
+        try {
+            vetorUsuarios = usuarioDAO.recuperarTodos();
+        } catch (SQLException ex) {
+            System.out.println("Erro ao consultar usuários: " + ex.getMessage());
+        }
+        return vetorUsuarios;
+
+    }
+
 }

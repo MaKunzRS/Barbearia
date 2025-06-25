@@ -112,7 +112,7 @@ public class TelaPDFClientes extends javax.swing.JInternalFrame {
 
                 int[] larguras = {4, 16, 11, 16, 11, 16};
 
-                PDFManager.gerar(cc.recuperarTodos(), caminho/*, ordem, larguras, rotulos*/);
+                PDFManager.gerar(cc.recuperarTodos(), caminho, ordem, larguras, rotulos);
                 JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome clientes.pdf");
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro ao gerar o PDF");

@@ -36,4 +36,10 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
+     public void exibeAtributos() {
+         System.out.println(id);
+         System.out.println(usuario);
+         System.out.println(senha);
+    }
 }

@@ -91,6 +91,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnCadastros.add(mnProdutos);
 
         mnUsuarios.setText("Usuarios");
+        mnUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnUsuariosActionPerformed(evt);
+            }
+        });
         mnCadastros.add(mnUsuarios);
 
         mnBarra.add(mnCadastros);
@@ -181,6 +186,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         dskPainel.add(tpp);
         tpp.setVisible(true);
     }//GEN-LAST:event_mnRelProdutosActionPerformed
+
+    private void mnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnUsuariosActionPerformed
+        TelaUsuario tu = new TelaUsuario();
+        dskPainel.add(tu);
+        tu.setVisible(true);
+    }//GEN-LAST:event_mnUsuariosActionPerformed
 
     /**
      * @param args the command line arguments

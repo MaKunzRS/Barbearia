@@ -51,22 +51,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblPreco" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTempoEstimado" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEstoque" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDescricao" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtPreco" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cbTipo" alignment="0" pref="280" max="32767" attributes="0"/>
-                              <Component id="txtTempoEstimado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtEstoque" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPreco" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTempoEstimado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEstoque" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDescricao" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cbTipo" alignment="0" pref="280" max="32767" attributes="0"/>
+                                  <Component id="txtTempoEstimado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtEstoque" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="txtPreco" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="311" max="32767" attributes="0"/>
                   </Group>
@@ -115,8 +117,6 @@
                 <Property name="text" type="java.lang.String" value="Pre&#xe7;o*"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtPreco">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblTempoEstimado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tempo Estimado"/>
@@ -163,6 +163,8 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPreco">
             </Component>
           </SubComponents>
         </Container>

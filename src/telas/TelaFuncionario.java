@@ -4,6 +4,7 @@
  */
 package telas;
 
+import apoio.Formatacao;
 import controladores.ControlaFuncionario;
 import entidades.Cliente;
 import entidades.Funcionario;
@@ -24,6 +25,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     public TelaFuncionario() {
         initComponents();
         montaTabela();
+        Formatacao.formatarTelefone(txtTelefone);
     }
 
 //Método para montar a tabela de listagem
@@ -101,11 +103,11 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         txtNome = new javax.swing.JTextField();
         lblCargo = new javax.swing.JLabel();
         lblTelefone = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
         lblSalario = new javax.swing.JLabel();
         txtSalario = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         txtCargo = new javax.swing.JTextField();
+        txtTelefone = new javax.swing.JFormattedTextField();
         abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFuncionarios = new javax.swing.JTable();
@@ -143,10 +145,10 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(lblCargo)
                     .addComponent(lblTelefone)
                     .addComponent(lblSalario)
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(txtSalario)
+                    .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                     .addComponent(txtNome)
-                    .addComponent(txtCargo))
+                    .addComponent(txtCargo)
+                    .addComponent(txtTelefone))
                 .addContainerGap(305, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
@@ -366,6 +368,6 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSalario;
-    private javax.swing.JTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
