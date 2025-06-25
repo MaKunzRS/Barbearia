@@ -21,7 +21,11 @@ public class Funcionario {
     public Funcionario() {
     }
 
-//Getters e Setters
+    @Override
+    public String toString() {
+        return id + ";" + nome + ";" + cargo + ";" + telefone + ";" + salario;
+    }
+        //Getters e Setters
     public int getId() {
         return id;
     }

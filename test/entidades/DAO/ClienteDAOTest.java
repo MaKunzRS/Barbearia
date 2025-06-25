@@ -32,7 +32,7 @@ public class ClienteDAOTest {
             + "  nome VARCHAR(255) NOT NULL, "
             + "  cpf CHAR(11) NOT NULL, "
             + "  email VARCHAR(255) NOT NULL, "
-            + "  data_nasc DATE NOT NULL,"
+            + "  dataNascimento DATE NOT NULL,"
             + "  telefone VARCHAR(255) NOT NULL "
             + ");";
 
