@@ -62,7 +62,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                                 return u.getId();
                             case 1:
                                 return u.getUsuario();
-                           
+
                         }
 
                     }
@@ -97,6 +97,8 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnAtualizar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+
+        setClosable(true);
 
         lblUsuario.setText("Usuário");
 
@@ -235,8 +237,18 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
 
         if (txtSenha.getText().equals(txtSenha2.getText())) {
 
-            u.setUsuario(txtUsuario.getText());
-            u.setSenha(txtSenha.getText());
+//            u.setUsuario(txtUsuario.getText());
+//            u.setSenha(txtSenha.getText());
+            String usuario = txtUsuario.getText().trim();
+            String senha = txtSenha.getText().trim();
+
+            if (usuario.isEmpty() || senha.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos obrigatórios!");
+                return;
+            }
+
+            u.setUsuario(usuario);
+            u.setSenha(senha);
 
             if (codigo == 0) {
                 boolean retorno = cu.salvar(u);
@@ -248,6 +260,8 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                     txtSenha2.setText("");
 
                     txtUsuario.requestFocus();
+                    
+                    montaTabela();
                 } else {
                     JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
                 }

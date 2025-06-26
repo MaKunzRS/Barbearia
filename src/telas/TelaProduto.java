@@ -289,8 +289,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         Produto pr = new Produto();
 
-        String descricao = txtDescricao.getText();
-        pr.setDescricao(descricao);
+//        String descricao = txtDescricao.getText();
+//        pr.setDescricao(descricao);
+        String descricao = txtDescricao.getText().trim();
+        String preco = txtPreco.getText().trim();
+        String tipo = cbTipo.getSelectedItem().toString().trim();
         pr.setPreco(txtPreco.getText());
         if (!txtTempoEstimado.getText().trim().equals("")) {
             pr.setTempoEstimado(Integer.parseInt(txtTempoEstimado.getText()));
@@ -300,6 +303,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         }
         pr.setTipo(cbTipo.getSelectedItem().toString());
         System.out.println(pr.getTipo());
+
+        if (descricao.isEmpty() || preco.isEmpty() || tipo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos obrigatórios: Descrição, Preço e Tipo.");
+            return;
+        }
 
         if (codigo == 0) {
             if (cbTipo.getSelectedItem() == "") {

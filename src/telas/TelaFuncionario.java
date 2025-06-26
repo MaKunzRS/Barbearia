@@ -264,11 +264,17 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
 
         Funcionario fun = new Funcionario();
 
-        String nome = txtNome.getText();
+        String nome = txtNome.getText().trim();
         fun.setNome(nome);
-        fun.setCargo(txtCargo.getText());
-        fun.setTelefone(txtTelefone.getText());
-        fun.setSalario(txtSalario.getText());
+        String cargo = txtCargo.getText().trim();
+        fun.setCargo(cargo);
+        fun.setTelefone(txtTelefone.getText().trim());
+        fun.setSalario(txtSalario.getText().trim());
+
+        if (nome.isEmpty() || cargo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha os campos obrigatórios: Nome e Cargo.");
+            return;
+        }
 
         if (codigo == 0) {
             boolean retorno = cf.salvar(fun);

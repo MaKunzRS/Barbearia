@@ -277,12 +277,18 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Cliente cl = new Cliente();
 
-        String nome = txtNome.getText();
+        String nome = txtNome.getText().trim();
         cl.setNome(nome);
-        cl.setCpf(txtCpf.getText());
-        cl.setTelefone(txtTelefone.getText());
-        cl.setEmail(txtEmail.getText());
-        cl.setDataNascimento(txtDataNasc.getText());
+        String cpf = txtCpf.getText().trim();
+        cl.setCpf(cpf);
+        cl.setTelefone(txtTelefone.getText().trim());
+        cl.setEmail(txtEmail.getText().trim());
+        cl.setDataNascimento(txtDataNasc.getText().trim());
+
+        if (nome.isEmpty() || cpf.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha os campos obrigatórios: Nome e CPF.");
+            return;
+        }
 
         if (codigo == 0) {
             boolean retorno = cc.salvar(cl);
