@@ -7,6 +7,7 @@ package telas;
 import apoio.Formatacao;
 import controladores.ControlaCliente;
 import entidades.Cliente;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
@@ -138,6 +139,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
+            }
+        });
+        btnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnSalvarKeyPressed(evt);
             }
         });
 
@@ -369,6 +375,12 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             txtNome.requestFocus();
         }
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnSalvar.doClick();
+        }
+    }//GEN-LAST:event_btnSalvarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

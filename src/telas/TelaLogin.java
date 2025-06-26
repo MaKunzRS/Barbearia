@@ -5,6 +5,7 @@
 package telas;
 
 import controladores.ControlaUsuario;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,13 +55,18 @@ public class TelaLogin extends javax.swing.JFrame {
                 btnEntrarActionPerformed(evt);
             }
         });
+        btnEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnEntrarKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblSenha)
                     .addComponent(btnEntrar)
@@ -82,7 +88,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btnEntrar)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,6 +109,12 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
+       
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        btnEntrar.doClick();}
+    }//GEN-LAST:event_btnEntrarKeyPressed
 
     /**
      * @param args the command line arguments

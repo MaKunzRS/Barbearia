@@ -8,6 +8,7 @@ import apoio.Formatacao;
 import controladores.ControlaProduto;
 import entidades.Cliente;
 import entidades.Produto;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
@@ -137,6 +138,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
+            }
+        });
+        btnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnSalvarKeyPressed(evt);
             }
         });
 
@@ -425,6 +431,12 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             txtTempoEstimado.setEnabled(false);
         }
     }//GEN-LAST:event_cbTipoActionPerformed
+
+    private void btnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnSalvar.doClick();
+        }
+    }//GEN-LAST:event_btnSalvarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

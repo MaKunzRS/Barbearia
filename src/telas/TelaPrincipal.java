@@ -41,6 +41,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnRelClientes = new javax.swing.JMenuItem();
         mnRelFuncionarios = new javax.swing.JMenuItem();
         mnRelProdutos = new javax.swing.JMenuItem();
+        mnAgendas = new javax.swing.JMenu();
+        mnAgendamento = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -128,6 +130,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         mnBarra.add(mnRelatorios);
 
+        mnAgendas.setText("Agendas");
+
+        mnAgendamento.setText("Agendamento");
+        mnAgendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAgendamentoActionPerformed(evt);
+            }
+        });
+        mnAgendas.add(mnAgendamento);
+
+        mnBarra.add(mnAgendas);
+
         setJMenuBar(mnBarra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -193,6 +207,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tu.setVisible(true);
     }//GEN-LAST:event_mnUsuariosActionPerformed
 
+    private void mnAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAgendamentoActionPerformed
+        TelaAgendamento ta = new TelaAgendamento();
+        dskPainel.add(ta);
+        ta.setVisible(true);
+    }//GEN-LAST:event_mnAgendamentoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,6 +229,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dskPainel;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem mnAgendamento;
+    private javax.swing.JMenu mnAgendas;
     private javax.swing.JMenuBar mnBarra;
     private javax.swing.JMenu mnCadastros;
     private javax.swing.JMenuItem mnClientes;

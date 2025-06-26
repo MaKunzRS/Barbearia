@@ -8,6 +8,7 @@ import apoio.Formatacao;
 import controladores.ControlaFuncionario;
 import entidades.Cliente;
 import entidades.Funcionario;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
@@ -130,6 +131,11 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
+            }
+        });
+        btnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnSalvarKeyPressed(evt);
             }
         });
 
@@ -355,6 +361,12 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         montaTabela();
     }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyPressed
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnSalvar.doClick();
+        }
+    }//GEN-LAST:event_btnSalvarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
