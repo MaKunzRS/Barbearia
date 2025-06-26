@@ -39,6 +39,7 @@ public class ConexaoBDTest {
     public void tearDown() {
     }
 
+   
     @Test
     public void testConnection() throws SQLException {
         // Obtém a Connection a partir do singleton ConexaoBD
@@ -49,8 +50,9 @@ public class ConexaoBDTest {
 
         // Verifica se está aberta
         assertFalse("A conexão não deve estar fechada", conn.isClosed());
-
+        
         conn.close();
         ConexaoBD.getInstance().shutdown();
     }
 }
+

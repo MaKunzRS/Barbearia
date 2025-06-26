@@ -30,7 +30,7 @@ public class ConexaoTestBDTest {
     public void tearDown() {
     }
     
-    @Test
+   @Test
     public void testDatabaseTestConnection() throws SQLException {
         // Define configuração para usar database de teste
         System.setProperty("db.config", "db-test.properties");
