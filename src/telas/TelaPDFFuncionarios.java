@@ -114,7 +114,7 @@ public class TelaPDFFuncionarios extends javax.swing.JInternalFrame {
                     "ID", "Nome", "Cargo", "Telefone", "Salário"
                 };
 
-                int[] larguras = {4, 16, 11, 11, 11,};
+                int[] larguras = {4, 16, 11, 15, 11,};
 
                 PDFManager.gerar(cf.recuperarTodos(), caminho, ordem, larguras, rotulos);
                 JOptionPane.showMessageDialog(null, "PDF gerado com sucesso com o nome funcionarios.pdf");

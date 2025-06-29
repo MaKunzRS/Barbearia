@@ -32,7 +32,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     private void montaTabela() {
         ArrayList<Produto> produtos = cp.recuperarTodos();
         if (produtos == null) {
-            JOptionPane.showMessageDialog(null, "Erro ao consultar clientes");
+            JOptionPane.showMessageDialog(null, "Erro ao consultar produtos");
         } else {
             tblProdutos.setModel(new AbstractTableModel() {
                 @Override
@@ -122,6 +122,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
+        setMaximizable(true);
 
         lblDescricao.setText("Descrição*");
 

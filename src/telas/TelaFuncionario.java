@@ -33,7 +33,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
     private void montaTabela() {
         ArrayList<Funcionario> funcionarios = cf.recuperarTodos();
         if (funcionarios == null) {
-            JOptionPane.showMessageDialog(null, "Erro ao consultar clientes");
+            JOptionPane.showMessageDialog(null, "Erro ao consultar funcionarios");
         } else {
             tblFuncionarios.setModel(new AbstractTableModel() {
                 @Override
@@ -117,6 +117,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
+        setMaximizable(true);
 
         lblNome.setText("Nome*");
 
