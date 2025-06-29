@@ -28,7 +28,7 @@
                   <Component id="txtCaminho" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="btnCaminho" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="145" max="32767" attributes="0"/>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
                       <Component id="btnPdf" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -56,6 +56,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCaminho">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/ramificacao-do-codigo.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Selecionar caminho"/>
       </Properties>
       <Events>
@@ -64,6 +67,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnPdf">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/arquivo-pdf.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Gerar PDF"/>
       </Properties>
       <Events>

@@ -69,6 +69,7 @@ public class TelaAgendamento extends javax.swing.JInternalFrame {
 
         pnlCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
 
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/procurar.png"))); // NOI18N
         btnCliente.setText("Buscar cliente");
 
         jLabel1.setText("Nome");
@@ -148,6 +149,7 @@ public class TelaAgendamento extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Horário");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/procurar.png"))); // NOI18N
         jButton1.setText("Buscar produto/serviço");
 
         jLabel8.setText("Serviço");
@@ -162,6 +164,7 @@ public class TelaAgendamento extends javax.swing.JInternalFrame {
 
         jLabel13.setText("Preço");
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/mais.png"))); // NOI18N
         jButton3.setText("Adicionar produto/serviço");
 
         javax.swing.GroupLayout pnlAgendaLayout = new javax.swing.GroupLayout(pnlAgenda);
@@ -267,6 +270,7 @@ public class TelaAgendamento extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tblAgendamento);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/corte-de-cabelo.png"))); // NOI18N
         jButton2.setText("Agendar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

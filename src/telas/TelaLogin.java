@@ -49,6 +49,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblSenha.setText("SENHA");
 
+        btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/digitar.png"))); // NOI18N
         btnEntrar.setText("ENTRAR");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -127,6 +127,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         lblSalario.setText("Salario*");
 
         btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/disco.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +156,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(txtNome)
                     .addComponent(txtCargo)
                     .addComponent(txtTelefone))
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +198,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tblFuncionarios);
 
         btnAtualizar.setBackground(new java.awt.Color(204, 204, 204));
+        btnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
         btnAtualizar.setText("Atualizar");
         btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,6 +207,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         });
 
         btnEditar.setBackground(new java.awt.Color(204, 204, 204));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lapis.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +216,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
         });
 
         btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixo.png"))); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +236,7 @@ public class TelaFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnExcluir)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         abaListagemLayout.setVerticalGroup(
             abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

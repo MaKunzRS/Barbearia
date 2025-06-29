@@ -45,6 +45,7 @@ public class TelaPDFProdutos extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
+        btnCaminho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ramificacao-do-codigo.png"))); // NOI18N
         btnCaminho.setText("Selecionar caminho");
         btnCaminho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +53,7 @@ public class TelaPDFProdutos extends javax.swing.JInternalFrame {
             }
         });
 
+        btnPdf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/arquivo-pdf.png"))); // NOI18N
         btnPdf.setText("Gerar PDF");
         btnPdf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +71,7 @@ public class TelaPDFProdutos extends javax.swing.JInternalFrame {
                     .addComponent(txtCaminho)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCaminho)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                         .addComponent(btnPdf)))
                 .addContainerGap())
         );

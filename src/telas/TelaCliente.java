@@ -134,6 +134,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         lblEmail.setText("Email");
 
         btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/disco.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setToolTipText("");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +168,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                     .addComponent(txtCpf)
                     .addComponent(txtDataNasc)
                     .addComponent(txtTelefone))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,6 +214,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tblClientes);
 
         btnAtualiza.setBackground(new java.awt.Color(204, 204, 204));
+        btnAtualiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
         btnAtualiza.setText("Atualizar");
         btnAtualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,6 +223,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         });
 
         btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixo.png"))); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +232,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         });
 
         btnEditar.setBackground(new java.awt.Color(204, 204, 204));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lapis.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
