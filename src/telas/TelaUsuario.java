@@ -94,8 +94,8 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         abaListagem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsuarios = new javax.swing.JTable();
-        btnAtualizar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
+        btnAtualizar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
@@ -129,7 +129,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                         .addComponent(txtSenha)
                         .addComponent(lblSenha2)
                         .addComponent(txtSenha2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(624, Short.MAX_VALUE))
         );
         abaCadastroLayout.setVerticalGroup(
             abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,19 +166,38 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblUsuarios);
 
-        btnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
-        btnAtualizar.setText("Atualizar");
-        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtualizarActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout abaListagemLayout = new javax.swing.GroupLayout(abaListagem);
+        abaListagem.setLayout(abaListagemLayout);
+        abaListagemLayout.setHorizontalGroup(
+            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaListagemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 861, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        abaListagemLayout.setVerticalGroup(
+            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaListagemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        containerAbasUsuario.addTab("Listagem", abaListagem);
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lapis.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
             }
         });
 
@@ -190,46 +209,30 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout abaListagemLayout = new javax.swing.GroupLayout(abaListagem);
-        abaListagem.setLayout(abaListagemLayout);
-        abaListagemLayout.setHorizontalGroup(
-            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaListagemLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaListagemLayout.createSequentialGroup()
-                        .addComponent(btnAtualizar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEditar))
-                    .addComponent(btnExcluir))
-                .addGap(0, 3, Short.MAX_VALUE))
-        );
-        abaListagemLayout.setVerticalGroup(
-            abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(abaListagemLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtualizar)
-                    .addComponent(btnEditar)))
-        );
-
-        containerAbasUsuario.addTab("Listagem", abaListagem);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(containerAbasUsuario)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAtualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(containerAbasUsuario)
-                .addGap(200, 200, 200))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditar)
+                    .addComponent(btnAtualizar)
+                    .addComponent(btnExcluir))
+                .addContainerGap())
         );
 
         pack();
