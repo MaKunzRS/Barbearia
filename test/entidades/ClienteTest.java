@@ -48,7 +48,7 @@ public class ClienteTest {
     public void testGettersAndSetters() {
         // Arrange (já temos 'cliente' criado no setUp):
         int idEsperado = 42;
-        String nomeEsperado = "Juca Bala";
+        String nomeEsperado = "Leandro Souza";
         String cpfEsperado = "123.456.789-00";
         String emailEsperado = "Teste@teste.com";
         String dataEsperada = "01/01/1990";

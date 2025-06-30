@@ -51,7 +51,7 @@ public class FuncionarioTest {
    public void testGettersAndSetters() {
        
         int idEsperado = 42;
-        String nomeEsperado = "Juca Bala";
+        String nomeEsperado = "Anderson da Silva";
         String cargoEsperado = "Barbeiro";
         String telefoneEsperado = "(51)99548-8974";
         String salarioEsperado = "2000";
