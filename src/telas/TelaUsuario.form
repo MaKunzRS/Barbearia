@@ -94,21 +94,21 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblUsuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
+                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUsuario">
             </Component>
             <Component class="javax.swing.JLabel" name="lblSenha">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Digite uma senha"/>
+                <Property name="text" type="java.lang.String" value="Digite uma senha*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtSenha">
             </Component>
             <Component class="javax.swing.JLabel" name="lblSenha2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Digite a senha novamente"/>
+                <Property name="text" type="java.lang.String" value="Digite a senha novamente*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtSenha2">

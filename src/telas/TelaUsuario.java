@@ -101,11 +101,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
 
-        lblUsuario.setText("Usuário");
+        lblUsuario.setText("Usuário*");
 
-        lblSenha.setText("Digite uma senha");
+        lblSenha.setText("Digite uma senha*");
 
-        lblSenha2.setText("Digite a senha novamente");
+        lblSenha2.setText("Digite a senha novamente*");
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/disco.png"))); // NOI18N
         btnSalvar.setText("Salvar");
